@@ -6,3 +6,6 @@
 [alias]
 	s = status -s -uno
 	ci = commit -a -uno
+  b = branch
+  co = checkout
+
