@@ -1,0 +1,9 @@
+[user]
+	name = Yves Parès
+	email = limestrael@gmail.com
+[color]
+	ui = true
+[alias]
+	sl = status -s
+	s = status -s -uno
+	ci = commit -a -uno
