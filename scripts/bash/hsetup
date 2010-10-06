@@ -1,0 +1,7 @@
+#!/bin/sh
+
+runhaskell Setup.*hs configure --user -p &&
+runhaskell Setup.*hs build &&
+runhaskell Setup.*hs haddock &&
+runhaskell Setup.*hs install
+

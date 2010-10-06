@@ -1,0 +1,20 @@
+#!/bin/bash
+
+FLAC_OPTS="--silent -cd"
+: ${LAME_OPTS="--vbr-new -V4 -b192 -B256"}  # Si LAME_OPTS n'a pas été initialisé, on le fait
+ 
+(( $# == 0 )) &&
+    { echo "*** Usage: $(basename $0) src [dst]"; exit 1; }
+
+fileSrc=$1
+fileDst=${2:-${fileSrc%.*}.mp3}
+
+for tag in ARTIST TITLE ALBUM GENRE TRACKNUMBER DATE
+do
+    eval "$tag=\"$(metaflac "$fileSrc" --show-tag=$tag | sed s/.*=//g)\""
+done
+
+echo "Encoding '$fileSrc' to '$fileDst'..."
+flac $FLAC_OPTS "$fileSrc" | lame $LAME_OPTS - "$fileDst"
+id3v2 -t "$TITLE" -T "$TRACKNUMBER" -a "$ARTIST" -A "$ALBUM" -g "$GENRE" -y "$DATE" "$fileDst"
+
