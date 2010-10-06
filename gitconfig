@@ -4,6 +4,5 @@
 [color]
 	ui = true
 [alias]
-	su = status -s
 	s = status -s -uno
 	ci = commit -a -uno
