@@ -8,6 +8,6 @@
 	ci = commit -a -uno
   b = branch
   co = checkout
-	g = log --graph --pretty=format:\"%s [%h] %d\"
-	ga = log --graph --all --pretty=format:\"%s [%h] %d\"
+	g = log --graph --decorate --oneline
+	ga = log --graph --decorate --oneline --all
 
