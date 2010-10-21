@@ -107,7 +107,7 @@ set grepprg=grep\ -nH\ $*
 " The following changes the default filetype back to 'tex':
 let g:tex_flavor='latex'
 
-imap <buffer> <F2> <Plug>Tex_InsertItemOnThisLine
+let g:Imap_UsePlaceHolders=0
 
 " END: LaTeX settings
 
