@@ -125,6 +125,7 @@ map <M-Left>  <C-W>h
 map <M-Down>  <C-W>j
 map <M-Up>    <C-W>k
 
+map <C-B>        :buffers<Return>
 map <C-Down>     :bnext<Return>
 map <C-Up>       :bprevious<Return>
 map <Tab><Tab>   :tabnew<Return>
