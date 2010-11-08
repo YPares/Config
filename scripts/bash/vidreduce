@@ -1,0 +1,11 @@
+#!/bin/bash
+
+
+WIDTH=320
+
+
+input=$1
+output=${2:-${input%.*}_w$WIDTH.avi}
+
+mencoder "$input" -ovc xvid -xvidencopts fixed_quant=4 -oac mp3lame -lameopts abr:br=128 -vf scale=$WIDTH:-3 -o "$output"
+

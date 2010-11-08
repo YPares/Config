@@ -39,8 +39,8 @@ alias mkpyexe="echo '#!/usr/bin/env python
 ' >"
 
 
-alias hc="ghc --make -outputdir _build"
-alias hi="ghci -outputdir _build"
+alias hc="ghc --make -outputdir _build.d"
+alias hi="ghci -outputdir _build.d"
 
 alias dx="darcs"
 
