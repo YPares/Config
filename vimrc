@@ -84,6 +84,8 @@ endif
 
 " THESE ARE MY OWN OPTIONS
 
+set clipboard=unnamed
+
 " SO AS TO USE LaTeX
 
 " IMPORTANT: grep will sometimes skip displaying the file name if you
