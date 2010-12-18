@@ -3,18 +3,8 @@
 export EDITOR=vim
 #export PYTHONSTARTUP=$HOME/.pythonrc.py
 
-export GAMBIT_IMPLEMENTATION_PATH="/usr/local/Gambit-C/"
-export SCHEME_LIBRARY_PATH="/usr/local/lib/slib/"
+export PATH="$PATH:/data/cfg/scripts/bash:$HOME/.cabal/bin"
 
-export MANPATH="$GAMBIT_IMPLEMENTATION_PATH/share/man:$MANPATH"
-
-export PATH="/data/cfg/scripts/bash:$HOME/.cabal/bin:$GAMBIT_IMPLEMENTATION_PATH/bin:$PATH"
-
-export LD_LIBRARY_PATH="$GAMBIT_IMPLEMENTATION_PATH/lib:/usr/local/lib:$LD_LIBRARY_PATH"
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/lib"
 export LIBRARY_PATH="$LD_LIBRARY_PATH"
-
-export dde="/media/ook"
-export data="/mnt/data"
-export audio="/mnt/data/audio"
-export flac="/mnt/data/audio/flac"
 
