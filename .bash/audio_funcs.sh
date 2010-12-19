@@ -1,6 +1,3 @@
-#!/bin/bash
-
-
 AUDIO_DIRS=/data/audio_sorted/*
 MEDIALIB_DIR=/data/_audio
 COVERS_NAME=cover.jpg

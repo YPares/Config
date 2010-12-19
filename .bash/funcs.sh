@@ -1,6 +1,3 @@
-#!/bin/bash
-
-
 spk()
 {
     festival -b '(SayText "'"$*"'")'

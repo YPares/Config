@@ -1,5 +1,3 @@
-#!/bin/bash
-
 export EDITOR=vim
 #export PYTHONSTARTUP=$HOME/.pythonrc.py
 
