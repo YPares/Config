@@ -1,13 +1,14 @@
 [user]
-	name = Yves Parès
-	email = limestrael@gmail.com
+  name = Yves Parès
+  email = limestrael@gmail.com
 [color]
-	ui = true
+  ui = true
 [alias]
-	s = status -s -uno
-	ci = commit -a -uno
+  l = ls-tree --name-only HEAD
+  s = status -s -uno
+  ci = commit -a -uno
   b = branch
   co = checkout
-	g = log --graph --decorate --oneline
-	ga = log --graph --decorate --oneline --all
+  g = log --graph --decorate --oneline
+  ga = log --graph --decorate --oneline --all
 
