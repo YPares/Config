@@ -65,23 +65,3 @@ all()
     fi
 }
 
-MY_SSH="limestrael@172.20.2.64"
-
-mtaudio()
-{
-    [[ -d "/data/audio" ]] &&
-        { echo "Audio already mounted" && return; }
-    mkdir -p /data/audio
-    sshfs -o ro "$MY_SSH:/data/audio" /data/audio
-    symlib
-}
-
-umtaudio()
-{
-    [[ -d "/data/audio" ]] ||
-        { echo "Audio not mounted" && return; }
-    rm -rf "$HOME/symlib" > /dev/null
-    fusermount -u /data/audio
-    rmdir /data/audio
-}
-
