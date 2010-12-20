@@ -65,3 +65,15 @@ all()
     fi
 }
 
+map()
+{
+    [[ -z "$1" ]] &&
+      { echo "Usage: map <command> [<file1> <file2> ...]"
+        return 1; }
+    cmd="$1"
+    shift
+    [[ -z "$@" ]] && { set *; }
+    rec() { [[ -n "$1" ]] && eval "$cmd" "\"$1\"" && shift && rec "$@"; }
+    rec "$@"
+}
+
