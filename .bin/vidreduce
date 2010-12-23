@@ -1,11 +1,15 @@
 #!/bin/bash
 
 
-WIDTH=320
+: ${WIDTH:=320}
+audioOpts="-oac mp3lame -lameopts abr:br=128"
 
 
 input=$1
 output=${2:-${input%.*}_w$WIDTH.avi}
 
-mencoder "$input" -ovc xvid -xvidencopts fixed_quant=4 -oac mp3lame -lameopts abr:br=128 -vf scale=$WIDTH:-3 -o "$output"
+mencoder "$input" \
+  -ovc xvid -xvidencopts fixed_quant=4 \
+  -vf scale=$WIDTH:-3 \
+  $audioOpts -o "$output"
 
