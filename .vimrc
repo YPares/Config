@@ -150,6 +150,8 @@ au BufRead,BufNewFile [sS][cC]onstruct* setf python
 au BufRead,BufNewFile *.hsc,*.gc setf haskell
 au BufRead,BufNewFile *.py setlocal shiftwidth=4
 au BufRead,BufNewFile *.py setlocal tabstop=4
+au BufRead,BufNewFile *.java setlocal shiftwidth=4
+au BufRead,BufNewFile *.java setlocal tabstop=4
 
 au BufRead,BufNewFile *.pl setf prolog
 
