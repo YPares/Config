@@ -115,6 +115,26 @@ map <M-Left>  <C-W>h
 map <M-Down>  <C-W>j
 map <M-Up>    <C-W>k
 
+" To move the tabs
+function MoveTabLeft()
+   let tab_number = tabpagenr() - 1
+   if tab_number == 0
+      execute "tabm" tabpagenr('$') - 1
+   else
+      execute "tabm" tab_number - 1
+   endif
+endfunction
+
+function MoveTabRight()
+   let tab_number = tabpagenr() - 1
+   let last_tab_number = tabpagenr('$') - 1
+   if tab_number == last_tab_number
+      execute "tabm" 0
+   else
+      execute "tabm" tab_number + 1
+   endif
+endfunction
+
 map <C-B>        :buffers<Return>
 map <C-Down>     :bnext<Return>
 map <C-Up>       :bprevious<Return>
@@ -123,6 +143,8 @@ map <Tab><Up>    :tab split +:E<Return>
 map <Tab><Down>  :tabclose<Return>
 map <Tab><Right> :tabnext<Return>
 map <Tab><Left>  :tabprevious<Return>
+map <S-Tab><Right> :execute MoveTabRight()<Return>
+map <S-Tab><Left>  :execute MoveTabLeft()<Return>
 
 set number "Display lines numbers
 " set ignorecase "Ignore case while searching
