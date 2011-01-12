@@ -11,4 +11,6 @@
   co = checkout
   g = log --graph --decorate --oneline
   ga = log --graph --decorate --oneline --all
+[url "https://Limestrael@github.com/Limestrael/"]
+  insteadOf = myhub:/
 
