@@ -6,6 +6,7 @@
 [alias]
   l = ls-tree --name-only HEAD
   s = status -s
+  su = status -s -uno
   ci = commit
   b = branch
   co = checkout
