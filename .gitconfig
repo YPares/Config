@@ -7,6 +7,7 @@
   l = ls-tree --name-only HEAD
   s = status -s
   su = status -s -uno
+  f = fetch
   ci = commit
   b = branch
   co = checkout
