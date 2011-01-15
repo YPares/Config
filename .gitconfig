@@ -8,6 +8,7 @@
   s = status -s
   su = status -s -uno
   f = fetch
+  m = merge
   ci = commit
   b = branch
   co = checkout
