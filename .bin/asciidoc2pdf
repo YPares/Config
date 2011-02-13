@@ -1,0 +1,6 @@
+#!/bin/bash
+
+docbook="${1%.*}_db.xml"
+asciidoc -b docbook -d article -o "$docbook" "$1"
+dblatex -T db2latex "$docbook" -o "${1%.*}.pdf"
+
