@@ -14,6 +14,8 @@
   co = checkout
   g = log --graph --decorate --oneline
   ga = log --graph --decorate --oneline --all
+  logf = log --name-status
+  showf = show --name-status
 [url "https://Limestrael@github.com/Limestrael/"]
   insteadOf = myhub:/
 
