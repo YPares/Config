@@ -1,6 +1,3 @@
-[user]
-  name = Yves Parès
-  email = limestrael@gmail.com
 [color]
   ui = true
 [alias]
@@ -17,6 +14,4 @@
   ga = log --graph --decorate --oneline --all
   logf = log --decorate --name-status
   showf = show --decorate --name-status
-[url "https://Limestrael@github.com/Limestrael/"]
-  insteadOf = myhub:/
 
