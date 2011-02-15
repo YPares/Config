@@ -17,7 +17,8 @@ alias rm="rm -v"
 alias cp="cp -v"
 alias o="xdg-open"
 
-alias ..="cd .."
+alias u='[[ "$PWD" != / ]] && pushd ..'
+alias d="popd"
 
 alias ed="ed -p'> '"
 
