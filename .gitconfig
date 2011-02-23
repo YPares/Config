@@ -1,7 +1,7 @@
 [color]
   ui = true
 [alias]
-  l = ls-tree --name-only HEAD
+  ls = ls-tree --name-only HEAD
   s = status -s
   st = status -s -uno
   f = fetch
@@ -10,6 +10,7 @@
   cit = commit -uno
   b = branch
   co = checkout
+  l = log --decorate
   g = log --graph --decorate --oneline
   ga = log --graph --decorate --oneline --all
   logf = log --decorate --name-status
