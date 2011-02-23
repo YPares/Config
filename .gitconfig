@@ -12,6 +12,8 @@
   co = checkout
   l = log --decorate
   g = log --graph --decorate --oneline
+  gb = log --graph --decorate --oneline --branches
+  gr = log --graph --decorate --oneline --remotes
   ga = log --graph --decorate --oneline --all
   logf = log --decorate --name-status
   showf = show --decorate --name-status
