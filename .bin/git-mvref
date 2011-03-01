@@ -1,0 +1,11 @@
+#!/bin/bash
+
+[[ -z "$*" ]] && { echo "Usage: $(basename $0) <ref-name> <object>"; exit 1; }
+
+ref="$1"
+obj="${2-HEAD}"
+
+git branch -D "$ref" 2> /dev/null || echo "Reference "$ref" did not exist."
+git branch "$ref" "$obj" > /dev/null &&
+echo "Reference $ref now points to $obj."
+
