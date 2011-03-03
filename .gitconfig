@@ -17,5 +17,6 @@
   ga = log --graph --decorate --oneline --all
   logf = log --decorate --name-status
   showf = show --decorate --name-status
+  rl = reflog show --decorate
   sb = show-branch
 
