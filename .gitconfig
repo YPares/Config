@@ -1,3 +1,11 @@
+[merge]
+  tool = meld
+[diff]
+  tool = meld
+[difftool]
+  prompt = false
+[mergetool]
+  prompt = false
 [color]
   ui = true
 [alias]
@@ -19,4 +27,6 @@
   showf = show --decorate --name-status
   rl = reflog show --decorate
   sb = show-branch
+  dt = difftool
+  mt = mergetool
 
