@@ -30,4 +30,7 @@
   sb = show-branch
   dt = difftool
   mt = mergetool
+[user]
+	name = Yves Parès
+	email = yves.pares@gmail.com
 
