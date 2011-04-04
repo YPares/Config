@@ -24,6 +24,7 @@
   gr = log --graph --decorate --oneline --remotes
   ga = log --graph --decorate --oneline --all
   logf = log --decorate --name-status
+  logme = !sh -c 'git log --decorate --name-status --author=\"`git config user.name`\"'
   showf = show --decorate --name-status
   rl = reflog show --decorate
   sb = show-branch
