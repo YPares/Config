@@ -20,6 +20,8 @@ alias o="xdg-open"
 alias u='[[ "$PWD" != / ]] && pushd ..'
 alias d="popd"
 
+alias ff="find . -iname"
+
 alias ed="ed -p'> '"
 
 alias ipython="ipython -nobanner -noconfirm_exit"
