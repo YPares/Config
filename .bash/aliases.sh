@@ -40,7 +40,7 @@ alias mkpyexe="echo '#!/usr/bin/env python
 ' >"
 
 
-alias hc="ghc --make -outputdir _build.d"
+alias hc="ghc -outputdir _build.d"
 alias hi="ghci -outputdir _build.d"
 
 alias dx="darcs"
@@ -50,3 +50,7 @@ alias scala="scala -cp _classes"
 
 alias 7="svn"
 
+alias muscu="java -jar $HOME/Bowdel/JNet_Cube.jar &
+java -jar $HOME/Bowdel/JNet_Cube.jar &
+openoffice.org $HOME/Bowdel/Muscu.ods &"
+alias muscu1="java -jar $HOME/Bowdel/JNet_Cube.jar &"
