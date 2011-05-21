@@ -173,6 +173,10 @@ au BufRead,BufNewFile *.hsc,*.gc setf haskell
 au BufRead,BufNewFile *.pl setf prolog
 au BufRead,BufNewFile *.oz,*.ozg setf oz
 
+au BufRead,BufNewFile *.hs setlocal shiftwidth=2
+au BufRead,BufNewFile *.hs setlocal tabstop=2
+au BufRead,BufNewFile *.hsc setlocal shiftwidth=2
+au BufRead,BufNewFile *.hsc setlocal tabstop=2
 
 au FileType haskell,vhdl,ada let b:comment_leader = '-- '
 au FileType vim let b:comment_leader = '" '
