@@ -148,8 +148,8 @@ map <S-Tab><Left>  :execute MoveTabLeft()<Return>
 
 set number "Display lines numbers
 " set ignorecase "Ignore case while searching
-set shiftwidth=2
-set tabstop=2
+set shiftwidth=4
+set tabstop=4
 set expandtab
 
 set switchbuf=useopen
@@ -170,13 +170,7 @@ au BufRead,BufNewFile *.pde setf cpp
 au BufRead,BufNewFile [sS][cC]onstruct* setf python
 
 au BufRead,BufNewFile *.hsc,*.gc setf haskell
-au BufRead,BufNewFile *.py setlocal shiftwidth=4
-au BufRead,BufNewFile *.py setlocal tabstop=4
-au BufRead,BufNewFile *.java setlocal shiftwidth=4
-au BufRead,BufNewFile *.java setlocal tabstop=4
-
 au BufRead,BufNewFile *.pl setf prolog
-
 au BufRead,BufNewFile *.oz,*.ozg setf oz
 
 
