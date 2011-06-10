@@ -77,3 +77,8 @@ map()
     rec "$@"
 }
 
+hdoc()
+{
+    firefox $HOME/.cabal/share/doc/$1-*/html/index.html
+}
+
