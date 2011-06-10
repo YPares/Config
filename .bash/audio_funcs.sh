@@ -3,7 +3,7 @@ MEDIALIB_DIR=/Data/_Audio
 COVERS_NAME=cover.jpg
 TMP_PLAYLIST="/tmp/bashmuze-$USER.m3u"
 
-OGGENC_OPTS=-q7
+OGGENC_OPTS=-q6
 
 COVERS=resize  # Can ben 'keep', 'resize' or 'remove'
 
