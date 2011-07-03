@@ -1,0 +1,4 @@
+#!/bin/sh
+
+eyeD3 --to-v2.4 --remove-v1 --remove-comments --remove-images --remove-lyrics "$1"
+
