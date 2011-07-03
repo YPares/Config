@@ -85,6 +85,7 @@ endif
 " THESE ARE MY OWN OPTIONS
 
 set clipboard=unnamed
+set nobackup
 
 " SO AS TO USE LaTeX
 
