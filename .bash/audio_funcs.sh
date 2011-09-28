@@ -1,5 +1,5 @@
-AUDIO_DIRS=/Data/Audio_Sorted/*
-MEDIALIB_DIR=/Data/_Audio
+AUDIO_DIRS=/Data/Audio/By_format/*
+MEDIALIB_DIR=/Data/Audio/_Library
 COVERS_NAME=cover.jpg
 TMP_PLAYLIST="/tmp/bashmuze-$USER.m3u"
 
