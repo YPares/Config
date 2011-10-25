@@ -1,4 +1,4 @@
-AUDIO_TOP_DIR=/Data/Audio/By_format
+AUDIO_TOP_DIR=/Data/Audio/Sorted
 AUDIO_DIRS=$AUDIO_TOP_DIR/*
 MEDIALIB_DIR=/Data/Audio/_Library
 COVERS_NAME=cover.jpg
