@@ -54,3 +54,6 @@ alias muscu="java -jar $HOME/Bowdel/JNet_Cube.jar &
 java -jar $HOME/Bowdel/JNet_Cube.jar &
 openoffice.org $HOME/Bowdel/Muscu.ods &"
 alias muscu1="java -jar $HOME/Bowdel/JNet_Cube.jar &"
+
+alias setupSaves='for i in /Data/Software/Saves/*; do f="'$HOME'/.`basename "$i"`"; [ -e "$f" ] || ln -s "$i" "$f"; done'
+
