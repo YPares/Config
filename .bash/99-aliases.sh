@@ -40,8 +40,8 @@ alias mkpyexe="echo '#!/usr/bin/env python
 ' >"
 
 
-alias hc="ghc -outputdir _build.d"
-alias hi="ghci -outputdir _build.d"
+alias hc="ghc -outputdir _build.d -fwarn-incomplete-patterns"
+alias hi="ghci -outputdir _build.d -fwarn-incomplete-patterns"
 
 alias dx="darcs"
 
