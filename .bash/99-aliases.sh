@@ -48,12 +48,10 @@ alias dx="darcs"
 alias sc="mkdir -p _classes; fsc -d _classes"
 alias scala="scala -cp _classes"
 
-alias 7="svn"
+setupSaves()
+{
+    for i in /Data/Software/Saves/home/*; do f="$HOME/.`basename "$i"`"; [ -e "$f" ] || ln -s "$i" "$f"; done
 
-alias muscu="java -jar $HOME/Bowdel/JNet_Cube.jar &
-java -jar $HOME/Bowdel/JNet_Cube.jar &
-openoffice.org $HOME/Bowdel/Muscu.ods &"
-alias muscu1="java -jar $HOME/Bowdel/JNet_Cube.jar &"
-
-alias setupSaves='for i in /Data/Software/Saves/*; do f="'$HOME'/.`basename "$i"`"; [ -e "$f" ] || ln -s "$i" "$f"; done'
+    for i in /Data/Software/Saves/local-share/*; do f="$HOME/.local/share/`basename "$i"`"; [ -e "$f" ] || ln -s "$i" "$f"; done
+}
 
