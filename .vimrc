@@ -140,7 +140,7 @@ map <C-B>        :buffers<Return>
 map <C-Down>     :bnext<Return>
 map <C-Up>       :bprevious<Return>
 map <Tab><Tab>   :tabnew<Return>
-map <Tab><Up>    :tab split +:E<Return>
+map <Tab><Up>    :tab split +:Explore<Return>
 map <Tab><Down>  :tabclose<Return>
 map <Tab><Right> :tabnext<Return>
 map <Tab><Left>  :tabprevious<Return>

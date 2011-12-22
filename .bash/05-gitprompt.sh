@@ -1,33 +1,18 @@
 __gitdir()
 {
-    if [ -z "${1-}" ]
+    if [ -d .git ]
     then
-        if [ -n "${__git_dir-}" ]
-        then
-            echo "$__git_dir"
-        else
-            if [ -d .git ]
-            then
-                echo .git
-            else
-                git rev-parse --git-dir 2>/dev/null
-            fi
-        fi
+        echo .git
     else
-        if [ -d "$1/.git" ]
-        then
-            echo "$1/.git"
-        else
-            echo "$1"
-        fi
+        git rev-parse --git-dir 2>/dev/null
     fi
 }
 
 __git_ps1()
 {
     local g="$(__gitdir)"
-    if [ -n "$g" ]
-    then
+
+    if [ -n "$g" ]; then
         local r
         local b
         if [ -f "$g/rebase-merge/interactive" ]
@@ -67,14 +52,14 @@ __git_ps1()
                 b="$(git symbolic-ref HEAD 2>/dev/null)" || {
                     b="$(
                         case "${GIT_PS1_DESCRIBE_STYLE-}" in
-                        (contains)
-                            git describe --contains HEAD ;;
-                        (branch)
-                            git describe --contains --all HEAD ;;
-                        (describe)
-                            git describe HEAD ;;
-                        (* | default)
-                            git describe --exact-match HEAD ;;
+                            (contains)
+                                git describe --contains HEAD ;;
+                            (branch)
+                                git describe --contains --all HEAD ;;
+                            (describe)
+                                git describe HEAD ;;
+                            (* | default)
+                                git describe --exact-match HEAD ;;
                         esac 2>/dev/null)" || b="$(cut -c1-7 "$g/HEAD" 2>/dev/null)..."  || b="unknown";
                     b="($b)"
                 }
@@ -87,13 +72,10 @@ __git_ps1()
         local c
         if [ "true" = "$(git rev-parse --is-inside-git-dir 2>/dev/null)" ]
         then
-            if [ "true" = "$(git rev-parse --is-bare-repository 2>/dev/null)" ]
-            then
-                c="BARE:"
-            else
-                b="GIT_DIR!"
-            fi
+            c="$g"
         else
+            c="$g/.."
+
             if [ "true" = "$(git rev-parse --is-inside-work-tree 2>/dev/null)" ]
             then
                 if [ -n "${GIT_PS1_SHOWDIRTYSTATE-}" ]
@@ -122,6 +104,11 @@ __git_ps1()
                 fi
             fi
         fi
+
+        c=$(realpath -s "$c")
+        [ "$c" = "$PWD" ] && c="" ||
+            c=$(echo "$c" | sed "s:^$HOME:\~:"):
+        
         if [ -n "${1-}" ]
         then
             printf "$1" "$c${b##refs/heads/}$w$i$s$u$r"
