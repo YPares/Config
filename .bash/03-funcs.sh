@@ -14,7 +14,17 @@ w2u()
 
 gtr()
 {
-    [[ -d ".git" || -d "_darcs" || ( -d ".svn" && ! -d "../.svn" ) || "$PWD" == "/" ]] || { cd .. && gtr; }
+    d=${1-.}
+
+    if [[ -d "$d/.git" || -d "$d/_darcs" ||
+          ( -d "$d/.svn" && ! -d "$d/../.svn" ) ||
+          -e "$d/.fake-root" ||
+          "$(readlink -f "$d")" == "/" ]]; then
+        cd "$d"
+        pwd
+    else
+        gtr "$d/.."
+    fi
 }
 
 transformStdinToPattern()
