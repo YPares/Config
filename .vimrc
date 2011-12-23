@@ -147,6 +147,8 @@ map <Tab><Left>  :tabprevious<Return>
 map <S-Tab><Right> :execute MoveTabRight()<Return>
 map <S-Tab><Left>  :execute MoveTabLeft()<Return>
 
+map ² :Explore<Return>
+
 set number "Display lines numbers
 " set ignorecase "Ignore case while searching
 set shiftwidth=4
