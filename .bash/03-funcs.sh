@@ -14,7 +14,7 @@ w2u()
 
 gtr()
 {
-    [[ $(pwd) == "/" || -d "_darcs" ]] || { cd .. && gtr; }
+    [[ -d ".git" || -d "_darcs" || ( -d ".svn" && ! -d "../.svn" ) || "$PWD" == "/" ]] || { cd .. && gtr; }
 }
 
 transformStdinToPattern()
@@ -79,6 +79,6 @@ map()
 
 hdoc()
 {
-    firefox $HOME/.cabal/share/doc/$1-*/html/index.html
+    firefox "$HOME/.cabal/share/doc/$1-*/html/index.html"
 }
 

@@ -12,6 +12,8 @@ alias syncaudio="rsync -av $AUDIO_TOP_DIR/ /media/ook/Audio"
 alias ls='ls -B --color=auto --group-directories-first'
 alias l="ls"
 alias ll='ls -l'
+alias la='ls -A'
+alias lla='ls -lA'
 alias t='tree'
 alias mv="mv -v"
 alias rm="rm -v"
