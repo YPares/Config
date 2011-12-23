@@ -1,18 +1,8 @@
-__gitdir()
-{
-    if [ -d .git ]
-    then
-        echo .git
-    else
-        git rev-parse --git-dir 2>/dev/null
-    fi
-}
-
 __git_ps1()
 {
-    local g="$(__gitdir)"
-
-    if [ -n "$g" ]; then
+    local g
+    if g="$(git rev-parse --git-dir 2>/dev/null)"
+    then  # Inside a git repository
         local r
         local b
         if [ -f "$g/rebase-merge/interactive" ]
@@ -109,12 +99,7 @@ __git_ps1()
         [ "$c" = "$PWD" ] && c="" ||
             c=$(echo "$c" | sed "s:^$HOME:\~:"):
         
-        if [ -n "${1-}" ]
-        then
-            printf "$1" "$c${b##refs/heads/}$w$i$s$u$r"
-        else
-            printf " %s" "$c${b##refs/heads/}$w$i$s$u$r"
-        fi
+        echo " $c${b##refs/heads/}$w$i$s$u$r"
     fi
 }
 
