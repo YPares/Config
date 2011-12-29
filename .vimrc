@@ -87,6 +87,8 @@ endif
 set clipboard=unnamed
 set nobackup
 
+set background=light
+
 " SO AS TO USE LaTeX
 
 " IMPORTANT: grep will sometimes skip displaying the file name if you
