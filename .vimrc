@@ -89,6 +89,25 @@ set nobackup
 
 set background=light
 
+" NEOBUNDLE OPTIONS
+
+if has('vim_starting')
+    set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+call neobundle#rc(expand('~/.vim/bundle/'))
+
+NeoBundle "Shougo/neobundle.vim"
+NeoBundle "Shougo/vimproc"
+NeoBundle "Shougo/vimshell"
+NeoBundle "Shougo/unite.vim"
+NeoBundle "Shougo/neocomplcache"
+let g:neocomplcache_enable_at_startup = 1  " If too heavy, disable and use manually :NeoComplCacheEnable
+
+NeoBundle "scrooloose/syntastic"
+
+NeoBundle "eagletmt/ghcmod-vim"
+NeoBundle "ujihisa/neco-ghc"
+
 " SO AS TO USE LaTeX
 
 " IMPORTANT: grep will sometimes skip displaying the file name if you
