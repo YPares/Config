@@ -1,0 +1,8 @@
+#!/bin/sh
+if [ `ps -C xflux | wc -l` == 2 ]; then
+    killall xflux
+else
+    # F.Lux for Paris
+    xflux -l 48.856578 -g 2.351828
+fi
+
