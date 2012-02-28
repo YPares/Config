@@ -1,7 +1,7 @@
 #!/bin/bash
 
 FLAC_OPTS="--silent -cd"
-: ${LAME_OPTS="--vbr-new -V4 -b192 -B256"}  # Si LAME_OPTS n'a pas été initialisé, on le fait
+: ${LAME_OPTS="--vbr-new -V1"}  # Si LAME_OPTS n'a pas été initialisé, on le fait
  
 (( $# == 0 )) &&
     { echo "*** Usage: $(basename $0) src [dst]"; exit 1; }

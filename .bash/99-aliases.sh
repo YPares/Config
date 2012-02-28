@@ -7,7 +7,7 @@ alias grep="grep -i"
 
 alias m="mplayer"
 
-alias syncaudio="rsync -av $AUDIO_TOP_DIR/ /media/ook/Audio"
+alias syncaudio="rsync -av $AUDIO_TOP_DIR/ /media/scorpio/Audio"
 
 alias ls='ls -B --color=auto --group-directories-first'
 alias l="ls"
