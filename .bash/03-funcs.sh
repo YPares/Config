@@ -92,9 +92,9 @@ hdoc()
     firefox "$HOME/.cabal/share/doc/$1-*/html/index.html"
 }
 
-vimpath()
+vimp()
 {
-    path=""
+    path="`readlink -f .`"
     for arg in "$@"; do
         path="$path,`readlink -f "$arg"`"
     done
