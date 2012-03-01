@@ -92,3 +92,26 @@ hdoc()
     firefox "$HOME/.cabal/share/doc/$1-*/html/index.html"
 }
 
+vimpath()
+{
+    path=""
+    for arg in "$@"; do
+        path="$path,`readlink -f "$arg"`"
+    done
+    vim -c "set path+="$path""
+}
+
+githubclone()
+{
+    repo="$1"
+    shift
+    git clone "https://github.com/$repo.git" "$@"
+}
+
+setupSaves()
+{
+    for i in /Data/Software/Saves/home/*; do f="$HOME/.`basename "$i"`"; [ -e "$f" ] || ln -s "$i" "$f"; done
+
+    for i in /Data/Software/Saves/local-share/*; do f="$HOME/.local/share/`basename "$i"`"; [ -e "$f" ] || ln -s "$i" "$f"; done
+}
+

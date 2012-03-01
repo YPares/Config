@@ -51,10 +51,3 @@ alias dx="darcs"
 alias sc="mkdir -p _classes; fsc -d _classes"
 alias scala="scala -cp _classes"
 
-setupSaves()
-{
-    for i in /Data/Software/Saves/home/*; do f="$HOME/.`basename "$i"`"; [ -e "$f" ] || ln -s "$i" "$f"; done
-
-    for i in /Data/Software/Saves/local-share/*; do f="$HOME/.local/share/`basename "$i"`"; [ -e "$f" ] || ln -s "$i" "$f"; done
-}
-
