@@ -6,5 +6,5 @@ export PATH="$PATH:$HOME/.bin:$HOME/.cabal/bin"
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/lib"
 export LIBRARY_PATH="$LD_LIBRARY_PATH"
 
-export DEV_SANDBOXES="/Data/Devel/Sandboxes"
+export HASKELL_SANDBOXES="/Data/Devel/Sandboxes/Haskell"
 

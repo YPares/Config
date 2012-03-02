@@ -87,29 +87,6 @@ map()
     rec "$@"
 }
 
-cab()
-{
-    [ -z "$*" ] && { \ls "$DEV_SANDBOXES"; return; }
-
-    sandbox="$1"
-    shift
-    cabal-dev --sandbox="$DEV_SANDBOXES/$sandbox/cabal-dev" "$@"
-}
-_cab()  # Bash completion function
-{
-    if ((COMP_CWORD==1)); then
-        local cur="${COMP_WORDS[1]}"
-        COMPREPLY=( $(compgen -W "$(\ls "$DEV_SANDBOXES")" -- "$cur") )
-    else
-        ((COMP_CWORD-=1))
-        unset COMP_WORDS[0]
-        unset COMP_WORDS[1]  # unset DOES NOT remove the cell! It merely blanks it
-        COMP_WORDS=( "cabal" "${COMP_WORDS[@]}" )  # ... and this does not take blank cells ...
-        _cabal
-    fi
-}
-complete -o default -F _cab cab
-
 vimp()
 {
     path="`readlink -f .`"
