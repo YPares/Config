@@ -68,9 +68,12 @@ hbx()
 $(which $c) -no-user-package-conf -package-conf \"$pkgconf\" \"\$@\"" > "$tempdir/$c"
                 chmod +x "$tempdir/$c"
             done
-            echo "#!/bin/sh
-$(which ghc-mod) --ghcOpt=-no-user-package-conf '--ghcOpt=-package-conf $pkgconf' \"\$@\"" > "$tempdir/ghc-mod"
-            chmod +x "$tempdir/ghc-mod"
+            ghcmodpath="$(which ghc-mod)"
+            if [ -n "$ghcmodpath" ]; then
+                echo "#!/bin/sh
+$ghcmodpath --ghcOpt=-no-user-package-conf '--ghcOpt=-package-conf $pkgconf' \"\$@\"" > "$tempdir/ghc-mod"
+                chmod +x "$tempdir/ghc-mod"
+            fi
             ( PATH="$tempdir:$PATH" "$@"; )
             rm -rf $tempdir > /dev/null
             ;;
