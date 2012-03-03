@@ -89,21 +89,20 @@ set nobackup
 
 set background=light
 
-" NEOBUNDLE OPTIONS
+" PATH OPTIONS
 
-if has('vim_starting')
-    set runtimepath+=~/.vim/bundle/neobundle.vim/
-endif
+ if has('vim_starting')
+     set runtimepath+=~/.vim/bundle/neobundle.vim/
+ endif
 call neobundle#rc(expand('~/.vim/bundle/'))
 
 NeoBundle "Shougo/neobundle.vim"
 NeoBundle "Shougo/vimproc"
-NeoBundle "Shougo/vimshell"
-NeoBundle "Shougo/unite.vim"
 NeoBundle "Shougo/neocomplcache"
 let g:neocomplcache_enable_at_startup = 1  " If too heavy, disable and use manually :NeoComplCacheEnable
 
 NeoBundle "scrooloose/syntastic"
+let g:syntastic_quiet_warnings = 1
 
 NeoBundle "eagletmt/ghcmod-vim"
 NeoBundle "ujihisa/neco-ghc"
@@ -118,8 +117,6 @@ set grepprg=grep\ -nH\ $*
 " OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
 " The following changes the default filetype back to 'tex':
 let g:tex_flavor='latex'
-
-let g:Imap_UsePlaceHolders=0
 
 " END: LaTeX settings
 
@@ -165,8 +162,8 @@ map <Tab><Up>    :tabnew +:Explore<Return>
 map <Tab><Down>  :tabclose<Return>
 map <Tab><Right> :tabnext<Return>
 map <Tab><Left>  :tabprevious<Return>
-map <S-Tab><Right> :execute MoveTabRight()<Return>
-map <S-Tab><Left>  :execute MoveTabLeft()<Return>
+map <S-Tab><Right> :call MoveTabRight()<Return>
+map <S-Tab><Left>  :call MoveTabLeft()<Return>
 
 map ² :Explore<Return>
 
@@ -189,18 +186,6 @@ let g:netrw_altv = 1 " When opening file with vsplit (v), open file in the right
 let g:netrw_list_hide = '^\.[^(\.$)],.*\~$,.*\~\*$,.*\.pyc$,.*\.o$,.*\.hi$,.*\.class$'
 
 " END OF NETRW BROWSER SETTINGS
-
-au BufRead,BufNewFile *.pde setf cpp
-au BufRead,BufNewFile [sS][cC]onstruct* setf python
-
-au BufRead,BufNewFile *.hsc,*.gc setf haskell
-au BufRead,BufNewFile *.pl setf prolog
-au BufRead,BufNewFile *.oz,*.ozg setf oz
-
-au BufRead,BufNewFile *.hs setlocal shiftwidth=2
-au BufRead,BufNewFile *.hs setlocal tabstop=2
-au BufRead,BufNewFile *.hsc setlocal shiftwidth=2
-au BufRead,BufNewFile *.hsc setlocal tabstop=2
 
 au FileType haskell,vhdl,ada let b:comment_leader = '-- '
 au FileType vim let b:comment_leader = '" '
