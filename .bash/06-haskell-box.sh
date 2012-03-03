@@ -44,27 +44,40 @@ hbx()
         cd)
             cd "$sandbox_path"
             ;;
-        pkg)
-            \ghc-pkg --package-conf="$pkgconf" "$@"
-            ;;
         ghc)
             \ghc -no-user-package-conf -package-conf "$pkgconf" "$@"
             ;;
         ghci)
             \ghci -no-user-package-conf -package-conf "$pkgconf" "$@"
             ;;
+        pkg)
+            \ghc-pkg --package-conf="$pkgconf" "$@"
+            ;;
         configure | install)
             prefix=""
             [ -e "$sandbox_path/install_here" ] && prefix="--prefix=$sandbox_path"
             \cabal "$command" --package-db="$pkgconf" $prefix "$@"
             ;;
+        inbox)
+            [ -d ".haskell-box" ] &&
+                rm -rf .haskell-box/* > /dev/null ||
+                mkdir .haskell-box
+            for c in ghc ghci; do
+                echo "#!/bin/sh
+$(which $c) -no-user-package-conf -package-conf \"$pkgconf\" \"\$@\"" > ".haskell-box/$c"
+                chmod +x ".haskell-box/$c"
+            done
+            PATH=".haskell-box:$PATH" "$@"
+            rm -rf .haskell-box > /dev/null
+            ;;
         aliases)
-            alias pkg="hbx "$sandbox" pkg"
             alias ghc="hbx "$sandbox" ghc"
             alias ghci="hbx "$sandbox" ghci"
+            alias pkg="hbx "$sandbox" pkg"
             alias configure="hbx "$sandbox" configure"
             alias install="hbx "$sandbox" install"
             alias build="cabal build"
+            alias inbox="hbx "$sandbox" inbox"
             ;;
         *) echo "Error: invalid haskell-box command: '$command'" 1>&2
     esac
