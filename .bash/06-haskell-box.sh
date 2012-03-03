@@ -59,16 +59,20 @@ hbx()
             \cabal "$command" --package-db="$pkgconf" $prefix "$@"
             ;;
         inbox)
-            [ -d ".haskell-box" ] &&
-                rm -rf .haskell-box/* > /dev/null ||
-                mkdir .haskell-box
+            tempdir="/tmp/haskell-box-$$"
+            [ -d "$tempdir" ] &&
+                rm -rf $tempdir/* > /dev/null ||
+                mkdir $tempdir
             for c in ghc ghci; do
                 echo "#!/bin/sh
-$(which $c) -no-user-package-conf -package-conf \"$pkgconf\" \"\$@\"" > ".haskell-box/$c"
-                chmod +x ".haskell-box/$c"
+$(which $c) -no-user-package-conf -package-conf \"$pkgconf\" \"\$@\"" > "$tempdir/$c"
+                chmod +x "$tempdir/$c"
             done
-            PATH=".haskell-box:$PATH" "$@"
-            rm -rf .haskell-box > /dev/null
+            echo "#!/bin/sh
+$(which ghc-mod) --ghcOpt=-no-user-package-conf '--ghcOpt=-package-conf $pkgconf' \"\$@\"" > "$tempdir/ghc-mod"
+            chmod +x "$tempdir/ghc-mod"
+            ( PATH="$tempdir:$PATH" "$@"; )
+            rm -rf $tempdir > /dev/null
             ;;
         aliases)
             alias ghc="hbx "$sandbox" ghc"
