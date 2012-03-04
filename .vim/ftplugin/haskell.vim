@@ -15,3 +15,10 @@ function! GHC_CreateTagfile()
   echo "tags file created" 
 endfunction
 
+let g:ghc_check='ghc -v0 -O0 -no-link -outputdir _vim_make.d'
+
+" To be used with :make and quickfix (:copen, :cc, etc)
+execute 'setlocal makeprg=' . escape(g:ghc_check, ' ') . '\ %'
+
+command! -nargs=1 HI echo system(g:ghc_check . ' ' . expand("%") . ' -e "' . escape(<f-args>,'"') . '"')
+
