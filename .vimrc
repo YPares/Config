@@ -89,11 +89,11 @@ set nobackup
 
 set background=light
 
-" PATH OPTIONS
+" PATH AND BUNDLES OPTIONS
 
- if has('vim_starting')
-     set runtimepath+=~/.vim/bundle/neobundle.vim/
- endif
+if has('vim_starting')
+    set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
 call neobundle#rc(expand('~/.vim/bundle/'))
 
 NeoBundle "Shougo/neobundle.vim"
@@ -107,7 +107,7 @@ let g:syntastic_quiet_warnings = 1
 NeoBundle "eagletmt/ghcmod-vim"
 NeoBundle "ujihisa/neco-ghc"
 
-" SO AS TO USE LaTeX
+" BEGIN: LaTeX settings
 
 " IMPORTANT: grep will sometimes skip displaying the file name if you
 " search in a singe file. This will confuse Latex-Suite. Set your grep
@@ -157,8 +157,8 @@ endfunction
 map <C-B>        :buffers<Return>
 map <C-Down>     :bnext<Return>
 map <C-Up>       :bprevious<Return>
-map <Tab><Tab>   :tabnew<Return>
-map <Tab><Up>    :tabnew +:Explore<Return>
+map <Tab><Tab>   :tab split<Return>
+map <Tab><Up>    :tab split +:Explore<Return>
 map <Tab><Down>  :tabclose<Return>
 map <Tab><Right> :tabnext<Return>
 map <Tab><Left>  :tabprevious<Return>
@@ -178,15 +178,12 @@ set autoindent
 
 set linebreak " Do not cut words
 
-
-" NETRW BROWSER (:E) SETTINGS
-
+" NETRW BROWSER (:E) SETTINGS:
 let g:netrw_alto = 1 " When opening file with hsplit (o), open file in the bottom window
 let g:netrw_altv = 1 " When opening file with vsplit (v), open file in the right window
 let g:netrw_list_hide = '^\.[^(\.$)],.*\~$,.*\~\*$,.*\.pyc$,.*\.o$,.*\.hi$,.*\.class$'
 
-" END OF NETRW BROWSER SETTINGS
-
+" Commenting lines out:
 au FileType haskell,vhdl,ada let b:comment_leader = '-- '
 au FileType vim let b:comment_leader = '" '
 au FileType c,cpp,java let b:comment_leader = '// '
@@ -195,11 +192,10 @@ au FileType tex let b:comment_leader = '% '
 noremap <silent> ,c :<C-B>sil <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:noh<CR>
 noremap <silent> ,u :<C-B>sil <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:noh<CR>
 
-
-function AlwaysCD()
-  if bufname("") !~ "^ftp://"
-    lcd %:p:h
-  endif
-endfunction
-autocmd BufEnter * call AlwaysCD()
+" function AlwaysCD()
+"   if bufname("") !~ "^ftp://"
+"     lcd %:p:h
+"   endif
+" endfunction
+" autocmd BufEnter * call AlwaysCD()
 

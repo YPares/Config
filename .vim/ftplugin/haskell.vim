@@ -8,11 +8,10 @@ setlocal tabstop=2
 map <buffer> <silent> _tt :GhcModType<Return>
 map <buffer> _tc :GhcModTypeClear<Return>
 
-map _ct :call GHC_CreateTagfile()<cr>
+map <silent> _ct :call GHC_CreateTagfile()<cr>
 function! GHC_CreateTagfile()
-  redraw
-  echo "creating tags file" 
   let output = system('ghc -e ":ctags" ' . expand("%"))
   echo output
+  echo "tags file created" 
 endfunction
 
