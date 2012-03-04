@@ -107,6 +107,12 @@ let g:syntastic_quiet_warnings = 1
 NeoBundle "eagletmt/ghcmod-vim"
 NeoBundle "ujihisa/neco-ghc"
 
+NeoBundle "wincent/Command-T"
+map !f :CommandT<Return>
+map !b :CommandTBuffer<Return>
+map !t :CommandTTag<Return>
+map !j :CommandTJump<Return>
+
 " BEGIN: LaTeX settings
 
 " IMPORTANT: grep will sometimes skip displaying the file name if you
