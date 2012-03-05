@@ -78,13 +78,15 @@ $ghcmodpath --ghcOpt=-no-user-package-conf '--ghcOpt=-package-conf $pkgconf' \"\
             rm -rf $tempdir > /dev/null
             ;;
         aliases)
-            alias ghc="hbx "$sandbox" ghc"
-            alias ghci="hbx "$sandbox" ghci"
-            alias pkg="hbx "$sandbox" pkg"
-            alias configure="hbx "$sandbox" configure"
-            alias install="hbx "$sandbox" install"
+            alias ghc="hbx \"$sandbox\" ghc"
+            alias ghci="hbx \"$sandbox\" ghci"
+            alias pkg="hbx \"$sandbox\" pkg"
+            alias configure="hbx \"$sandbox\" configure"
+            alias install="hbx \"$sandbox\" install"
             alias build="cabal build"
-            alias inbox="hbx "$sandbox" inbox"
+            [ -n "$EDITOR" ] &&
+                alias "$EDITOR"="hbx \"$sandbox\" inbox $EDITOR"
+            alias inbox="hbx \"$sandbox\" inbox"
             ;;
         *) echo "Error: invalid haskell-box command: '$command'" 1>&2
     esac
