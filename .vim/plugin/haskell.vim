@@ -9,3 +9,5 @@ function GHC_DispResult(cmd, res)
      put =a:res
 endfunction
 
+command CABAL cexpr system("cabal build -v0")
+
