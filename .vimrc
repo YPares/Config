@@ -101,8 +101,8 @@ NeoBundle "Shougo/vimproc"
 NeoBundle "Shougo/neocomplcache"
 let g:neocomplcache_enable_at_startup = 1  " If too heavy, disable and use manually :NeoComplCacheEnable
 
-NeoBundle "scrooloose/syntastic"
-let g:syntastic_quiet_warnings = 1
+"NeoBundle "scrooloose/syntastic"
+"let g:syntastic_quiet_warnings = 1
 
 NeoBundle "eagletmt/ghcmod-vim"
 NeoBundle "ujihisa/neco-ghc"
