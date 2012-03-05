@@ -8,16 +8,15 @@ setlocal tabstop=2
 map <buffer> <silent> _tt :GhcModType<Return>
 map <buffer> _tc :GhcModTypeClear<Return>
 
-" Build the tags file
-" To be used with :make and quickfix (:copen, :cc, etc)
-map <buffer> <silent> _ct :cexpr system('ghc -v0 -e ":ctags" ' . expand("%"))<Return>
-
 let b:ghc='ghc -v0 -O0 -outputdir _vim_make.d'
 
-command! -buffer HC cexpr system(b:ghc . ' -no-link ' . expand("%"))
+let b:ghc_staticopts=$GHC_STATICOPTS
 
-" Not very useful, prefer :HC
-execute 'setlocal makeprg=' . escape(b:ghc, ' ') . '\ -no-link\ %'
+" Build the tags file
+" To be used with :make and quickfix (:copen, :cc, etc)
+map <buffer> <silent> _ct :cexpr system('ghc -v0 ' . b:ghc_staticopts . ' -e ":ctags" ' . expand("%"))<Return>
 
-command! -buffer -complete=tag -nargs=1 HI call GHC_DispResult(<f-args>, system(b:ghc . ' ' . expand("%") . ' -e "' . escape(<f-args>,'"') . '"'))
+command! -buffer HC cexpr system(b:ghc . ' ' . b:ghc_staticopts . ' -no-link ' . expand("%"))
+
+command! -buffer -complete=tag -nargs=1 HI call GHC_DispResult(<f-args>, system(b:ghc . ' ' . b:ghc_staticopts . ' ' . expand("%") . ' -e "' . escape(<f-args>,'"') . '"'))
 
