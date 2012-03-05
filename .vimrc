@@ -105,6 +105,7 @@ let g:neocomplcache_enable_at_startup = 1  " If too heavy, disable and use manua
 "let g:syntastic_quiet_warnings = 1
 
 NeoBundle "eagletmt/ghcmod-vim"
+let g:ghcmod_ghc_options = split($GHC_STATICOPTS)
 NeoBundle "ujihisa/neco-ghc"
 
 NeoBundle "wincent/Command-T"
