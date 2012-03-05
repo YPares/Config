@@ -84,6 +84,7 @@ $ghcmodpath --ghcOpt=-no-user-package-conf '--ghcOpt=-package-conf $pkgconf' \"\
             alias configure="hbx \"$sandbox\" configure"
             alias install="hbx \"$sandbox\" install"
             alias build="cabal build"
+            alias register="cabal register --inplace"
             [ -n "$EDITOR" ] &&
                 alias "$EDITOR"="hbx \"$sandbox\" inbox $EDITOR"
             alias inbox="hbx \"$sandbox\" inbox"
