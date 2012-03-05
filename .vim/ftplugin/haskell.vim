@@ -16,15 +16,5 @@ let b:ghc='ghc -v0 -O0 -outputdir _vim_make.d'
 " To be used with :make and quickfix (:copen, :cc, etc)
 execute 'setlocal makeprg=' . escape(b:ghc, ' ') . '\ -no-link\ %'
 
-command! -complete=tag -nargs=1 HI call GHC_DispResult(<f-args>, system(b:ghc . ' ' . expand("%") . ' -e "' . escape(<f-args>,'"') . '"'))
-function! GHC_DispResult(cmd, res)
-     pclose
-     rightbelow 6 new GHCi\ result
-     setlocal previewwindow
-     setlocal buftype=nofile
-     setlocal noswapfile
-     setlocal syntax=haskell
-     put! ='> ' . a:cmd
-     put =a:res
-endfunction
+command -buffer -complete=tag -nargs=1 HI call GHC_DispResult(<f-args>, system(b:ghc . ' ' . expand("%") . ' -e "' . escape(<f-args>,'"') . '"'))
 
