@@ -114,6 +114,8 @@ map !b :CommandTBuffer<Return>
 map !t :CommandTTag<Return>
 map !j :CommandTJump<Return>
 
+NeoBundle "ironcamel/vimchat"
+
 " BEGIN: LaTeX settings
 
 " IMPORTANT: grep will sometimes skip displaying the file name if you
@@ -161,21 +163,21 @@ function MoveTabRight()
    endif
 endfunction
 
-map <C-B>        :buffers<Return>
-map <C-Down>     :bnext<Return>
-map <C-Up>       :bprevious<Return>
-map <Tab><Tab>   :tab split<Return>
-map <Tab><Up>    :tab split +:Explore<Return>
-map <Tab><Down>  :tabclose<Return>
-map <Tab><Right> :tabnext<Return>
-map <Tab><Left>  :tabprevious<Return>
+"map <C-B>        :buffers<Return>
+"map <C-Down>     :bnext<Return>
+"map <C-Up>       :bprevious<Return>
+"map <Tab><Tab>   :tabedit %<Return>  " Removed because of incompatibility with jumplist command <Tab> or <C-I>
+"map <Tab><Up>    :$tabedit %<Return>
+"map <Tab><Down>  :tabclose<Return>
+"map <Tab><Right> gt
+"map <Tab><Left>  gT
 map <S-Tab><Right> :call MoveTabRight()<Return>
 map <S-Tab><Left>  :call MoveTabLeft()<Return>
 
 map ² :Explore<Return>
 
 set number "Display lines numbers
-" set ignorecase "Ignore case while searching
+set ignorecase "Ignore case while searching
 set shiftwidth=4
 set tabstop=4
 set expandtab
