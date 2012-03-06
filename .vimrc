@@ -131,6 +131,8 @@ let g:tex_flavor='latex'
 
 map ; :
 
+set noequalalways  " Windows won't get resized when one is closed
+
 map  <Up>   g<Up>
 map  <Down> g<Down>
 map  <Home> g<Home>
