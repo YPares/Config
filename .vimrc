@@ -129,8 +129,6 @@ let g:tex_flavor='latex'
 
 " END: LaTeX settings
 
-map ; :
-
 set noequalalways  " Windows won't get resized when one is closed
 
 map  <Up>   g<Up>
@@ -165,14 +163,6 @@ function MoveTabRight()
    endif
 endfunction
 
-"map <C-B>        :buffers<Return>
-"map <C-Down>     :bnext<Return>
-"map <C-Up>       :bprevious<Return>
-"map <Tab><Tab>   :tabedit %<Return>  " Removed because of incompatibility with jumplist command <Tab> or <C-I>
-"map <Tab><Up>    :$tabedit %<Return>
-"map <Tab><Down>  :tabclose<Return>
-"map <Tab><Right> gt
-"map <Tab><Left>  gT
 map <S-Tab><Right> :call MoveTabRight()<Return>
 map <S-Tab><Left>  :call MoveTabLeft()<Return>
 
@@ -202,11 +192,4 @@ au FileType sh,make,python let b:comment_leader = '# '
 au FileType tex let b:comment_leader = '% '
 noremap <silent> ,c :<C-B>sil <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:noh<CR>
 noremap <silent> ,u :<C-B>sil <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:noh<CR>
-
-" function AlwaysCD()
-"   if bufname("") !~ "^ftp://"
-"     lcd %:p:h
-"   endif
-" endfunction
-" autocmd BufEnter * call AlwaysCD()
 
