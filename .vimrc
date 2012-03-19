@@ -1,3 +1,6 @@
+command! -nargs=1 CommentOpts /^"OptsGroup:<args>$/+1,/^"EndOptsGroup:<args>$/-1 s/^/"-- / | nohlsearch
+command! -nargs=1 UncommentOpts /^"OptsGroup:<args>$/+1,/^"EndOptsGroup:<args>$/-1 s/^"-- // | nohlsearch
+
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"
   finish
@@ -89,7 +92,7 @@ set nobackup
 
 set background=light
 
-" PATH AND BUNDLES OPTIONS
+"OptsGroup:NeoBundle
 
 if has('vim_starting')
     set runtimepath+=~/.vim/bundle/neobundle.vim/
@@ -116,7 +119,9 @@ map !j :CommandTJump<Return>
 
 NeoBundle "ironcamel/vimchat"
 
-" BEGIN: LaTeX settings
+"EndOptsGroup:NeoBundle
+
+"OptsGroup:LaTeX
 
 " IMPORTANT: grep will sometimes skip displaying the file name if you
 " search in a singe file. This will confuse Latex-Suite. Set your grep
@@ -127,7 +132,7 @@ set grepprg=grep\ -nH\ $*
 " The following changes the default filetype back to 'tex':
 let g:tex_flavor='latex'
 
-" END: LaTeX settings
+"EndOptsGroup:LaTeX
 
 set noequalalways  " Windows won't get resized when one is closed
 
@@ -179,10 +184,13 @@ set autoindent
 
 set linebreak " Do not cut words
 
-" NETRW BROWSER (:E) SETTINGS:
+"OptsGroup:NetRW
+
 let g:netrw_alto = 1 " When opening file with hsplit (o), open file in the bottom window
 let g:netrw_altv = 1 " When opening file with vsplit (v), open file in the right window
 let g:netrw_list_hide = '^\.[^(\.$)],.*\~$,.*\~\*$,.*\.pyc$,.*\.o$,.*\.hi$,.*\.class$'
+
+"EndOptsGroup:NetRW
 
 " Commenting lines out:
 au FileType haskell,vhdl,ada let b:comment_leader = '-- '
