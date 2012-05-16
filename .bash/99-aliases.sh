@@ -44,6 +44,7 @@ alias mkpyexe="echo '#!/usr/bin/env python
 
 
 alias hc="ghc -outputdir _build.d -fwarn-incomplete-patterns"
+alias hcp="ghc -outputdir _build.d/prof -prof -fprof-auto -fprof-cafs -O2"
 alias hi="ghci -outputdir _build.d -fwarn-incomplete-patterns"
 
 alias dx="darcs"
