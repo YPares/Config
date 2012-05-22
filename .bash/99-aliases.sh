@@ -7,7 +7,7 @@ alias grep="grep -i"
 
 alias m="mplayer"
 
-alias syncaudio="rsync -av $AUDIO_TOP_DIR/ /media/scorpio/Audio"
+alias syncaudio="rsync -av $AUDIO_TOP_DIR/ /media/scorpio/Audio/Sorted"
 
 alias ls='ls -B --color=auto --group-directories-first'
 alias l="ls"
@@ -24,6 +24,8 @@ alias u='[[ "$PWD" != / ]] && pushd ..'
 alias d="popd"
 
 alias ff="find . -iname"
+
+alias sagi="sudo apt-get install"
 
 alias ed="ed -p'> '"
 
