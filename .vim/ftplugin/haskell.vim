@@ -12,7 +12,7 @@ let b:ghc='ghc -v0 -O0 -outputdir _vim_make.d'
 
 " Build the tags file
 " To be used with :make and quickfix (:copen, :cc, etc)
-map <buffer> <silent> _ct :cexpr system('ghc -v0 ' . $GHC_STATICOPTS . ' -e ":ctags!" ' . expand("%"))<Return>
+map <buffer> <silent> _ct :cexpr system('ghc -v0 -w ' . $GHC_STATICOPTS . ' -e ":ctags!" ' . expand("%"))<Return>
 
 command! -buffer HC cexpr system(b:ghc . ' ' . $GHC_STATICOPTS . ' -no-link ' . expand("%"))
 
