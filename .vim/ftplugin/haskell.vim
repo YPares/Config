@@ -8,7 +8,7 @@ setlocal tabstop=2
 map <buffer> <silent> _tt :GhcModType<Return>
 map <buffer> _tc :GhcModTypeClear<Return>
 
-let b:ghc='ghc -v0 -O0 -outputdir _vim_make.d'
+let b:ghc='ghc -v0 -O0 -outputdir _build.d/vim'
 
 " Build the tags file
 " To be used with :make and quickfix (:copen, :cc, etc)
