@@ -116,6 +116,7 @@ map !f :CommandT<Return>
 map !b :CommandTBuffer<Return>
 map !t :CommandTTag<Return>
 map !j :CommandTJump<Return>
+NeoBundle "majutsushi/tagbar"
 
 NeoBundle "ironcamel/vimchat"
 
