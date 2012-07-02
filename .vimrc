@@ -109,14 +109,21 @@ let g:neocomplcache_enable_at_startup = 1  " If too heavy, disable and use manua
 
 NeoBundle "eagletmt/ghcmod-vim"
 let g:ghcmod_ghc_options = split($GHC_STATICOPTS)
+
 NeoBundle "ujihisa/neco-ghc"
 
-NeoBundle "wincent/Command-T"
-map !f :CommandT<Return>
-map !b :CommandTBuffer<Return>
-map !t :CommandTTag<Return>
-map !j :CommandTJump<Return>
+NeoBundle "kien/ctrlp.vim"
+map !f :CtrlP<Return>
+map !t :CtrlPTag<Return>
+
+" NeoBundle "wincent/Command-T"
+" map !f :CommandT<Return>
+" map !b :CommandTBuffer<Return>
+" map !t :CommandTTag<Return>
+" map !j :CommandTJump<Return>
+
 NeoBundle "majutsushi/tagbar"
+map !e :TagbarToggle<Return>
 
 NeoBundle "Lokaltog/vim-powerline"
 set laststatus=2  " Always display statusline
