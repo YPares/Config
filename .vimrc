@@ -107,20 +107,14 @@ let g:neocomplcache_enable_at_startup = 1  " If too heavy, disable and use manua
 "NeoBundle "scrooloose/syntastic"
 "let g:syntastic_quiet_warnings = 1
 
-NeoBundle "eagletmt/ghcmod-vim"
-let g:ghcmod_ghc_options = split($GHC_STATICOPTS)
-
-NeoBundle "ujihisa/neco-ghc"
-
-NeoBundle "kien/ctrlp.vim"
-map !f :CtrlP<Return>
-map !t :CtrlPTag<Return>
-
 " NeoBundle "wincent/Command-T"
 " map !f :CommandT<Return>
 " map !b :CommandTBuffer<Return>
 " map !t :CommandTTag<Return>
 " map !j :CommandTJump<Return>
+NeoBundle "kien/ctrlp.vim"
+map !f :CtrlP<Return>
+map !t :CtrlPTag<Return>
 
 NeoBundle "majutsushi/tagbar"
 map !e :TagbarToggle<Return>
@@ -132,8 +126,16 @@ let g:Powerline_symbols='unicode'
 
 NeoBundle "godlygeek/tabular"
 
-
 "NeoBundle "ironcamel/vimchat"
+
+" Haskell-related plugins
+
+NeoBundle "eagletmt/ghcmod-vim"
+let g:ghcmod_ghc_options = split($GHC_STATICOPTS)
+
+NeoBundle "ujihisa/neco-ghc"
+
+NeoBundle "dag/vim2hs"
 
 "EndOptsGroup:NeoBundle
 
