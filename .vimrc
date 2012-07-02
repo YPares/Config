@@ -126,6 +126,8 @@ let g:Powerline_symbols='unicode'
 
 NeoBundle "godlygeek/tabular"
 
+NeoBundle "SirVer/ultisnips"
+
 "NeoBundle "ironcamel/vimchat"
 
 " Haskell-related plugins
@@ -136,6 +138,7 @@ let g:ghcmod_ghc_options = split($GHC_STATICOPTS)
 NeoBundle "ujihisa/neco-ghc"
 
 NeoBundle "dag/vim2hs"
+NeoBundle "kana/vim-filetype-haskell"
 
 "EndOptsGroup:NeoBundle
 
