@@ -130,6 +130,9 @@ set laststatus=2  " Always display statusline
 set t_Co=256
 let g:Powerline_symbols='unicode'
 
+NeoBundle "godlygeek/tabular"
+
+
 "NeoBundle "ironcamel/vimchat"
 
 "EndOptsGroup:NeoBundle
