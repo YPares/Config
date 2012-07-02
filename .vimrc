@@ -118,7 +118,12 @@ map !t :CommandTTag<Return>
 map !j :CommandTJump<Return>
 NeoBundle "majutsushi/tagbar"
 
-NeoBundle "ironcamel/vimchat"
+NeoBundle "Lokaltog/vim-powerline"
+set laststatus=2  " Always display statusline
+set t_Co=256
+let g:Powerline_symbols='unicode'
+
+"NeoBundle "ironcamel/vimchat"
 
 "EndOptsGroup:NeoBundle
 
