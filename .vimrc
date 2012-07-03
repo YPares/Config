@@ -115,6 +115,11 @@ let g:neocomplcache_enable_at_startup = 1  " If too heavy, disable and use manua
 NeoBundle "kien/ctrlp.vim"
 map !f :CtrlP<Return>
 map !t :CtrlPTag<Return>
+map !b :CtrlPBuffer<Return>
+map !j :CtrlPMRUFiles<Return>
+let g:ctrlp_dotfiles=0
+let g:ctrlp_working_path_mode=0
+let g:ctrlp_clear_cache_on_exit=0
 
 NeoBundle "majutsushi/tagbar"
 map !e :TagbarToggle<Return>
@@ -125,6 +130,7 @@ set t_Co=256
 let g:Powerline_symbols='unicode'
 
 NeoBundle "godlygeek/tabular"
+command! -nargs=1 Tabop Tabular /\(\s\|\a\|[()[\]{}]\)\zs<args>\ze\(\s\|\a\|[()[\]{}]\)
 
 NeoBundle "SirVer/ultisnips"
 
