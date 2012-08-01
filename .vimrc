@@ -146,6 +146,8 @@ NeoBundle "ujihisa/neco-ghc"
 NeoBundle "dag/vim2hs"
 NeoBundle "kana/vim-filetype-haskell"
 
+NeoBundle "vim-scripts/n3.vim"
+
 "EndOptsGroup:NeoBundle
 
 "OptsGroup:LaTeX
