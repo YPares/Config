@@ -146,6 +146,8 @@ NeoBundle "ujihisa/neco-ghc"
 NeoBundle "dag/vim2hs"
 NeoBundle "kana/vim-filetype-haskell"
 
+NeoBundle "vim-scripts/VimClojure"
+
 NeoBundle "vim-scripts/n3.vim"
 
 "EndOptsGroup:NeoBundle
@@ -200,6 +202,8 @@ endfunction
 map <S-Tab><Right> :call MoveTabRight()<Return>
 map <S-Tab><Left>  :call MoveTabLeft()<Return>
 
+map <Tab><Tab>     :tab split<Return>
+
 map ² :Explore<Return>
 
 set number "Display lines numbers
@@ -227,6 +231,7 @@ au FileType vim let b:comment_leader = '" '
 au FileType c,cpp,java let b:comment_leader = '// '
 au FileType sh,make,python let b:comment_leader = '# '
 au FileType tex let b:comment_leader = '% '
+au FileType lisp,scheme,clojure let b:comment_leader = '; '
 noremap <silent> ,c :<C-B>sil <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:noh<CR>
 noremap <silent> ,u :<C-B>sil <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:noh<CR>
 
