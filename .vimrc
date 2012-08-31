@@ -148,6 +148,8 @@ NeoBundle "kana/vim-filetype-haskell"
 
 NeoBundle "vim-scripts/n3.vim"
 
+NeoBundle "vim-scripts/VimClojure"
+
 "EndOptsGroup:NeoBundle
 
 "OptsGroup:LaTeX
