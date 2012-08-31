@@ -7,13 +7,14 @@ alias grep="grep -i"
 
 alias m="mplayer"
 
-alias syncaudio="rsync -av $AUDIO_TOP_DIR/ /media/scorpio/Audio/Sorted"
+alias syncaudio="rsync -rtuv $AUDIO_TOP_DIR/ /media/scorpio/Audio/Sorted"
+alias syncaudioback="rsync -rtuv /media/scorpio/Audio/Sorted/ $AUDIO_TOP_DIR"
 
 alias ls='ls -B --color=auto --group-directories-first'
 alias l="ls"
-alias ll='ls -l'
+alias ll='ls -lh'
 alias la='ls -A'
-alias lla='ls -lA'
+alias lla='ls -lAh'
 alias t='tree'
 alias mv="mv -v"
 alias rm="rm -v"
