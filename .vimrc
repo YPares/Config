@@ -206,6 +206,9 @@ map <Tab><Tab>     :tab split<Return>
 
 map ² :Explore<Return>
 
+"Quick and dirty call to a build script
+map !! :w<Return> :cexpr system("./build.sh")<Return>
+
 set number "Display lines numbers
 set ignorecase "Ignore case while searching
 set shiftwidth=4
