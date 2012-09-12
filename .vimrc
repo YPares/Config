@@ -127,7 +127,6 @@ map !e :TagbarToggle<Return>
 NeoBundle "Lokaltog/vim-powerline"
 set laststatus=2  " Always display statusline
 set t_Co=256
-let g:Powerline_symbols='unicode'
 
 NeoBundle "godlygeek/tabular"
 command! -nargs=1 Tabop Tabular /\(\s\|\a\|[()[\]{}]\)\zs<args>\ze\(\s\|\a\|[()[\]{}]\)
