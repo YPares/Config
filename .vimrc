@@ -107,19 +107,15 @@ let g:neocomplcache_enable_at_startup = 1  " If too heavy, disable and use manua
 "NeoBundle "scrooloose/syntastic"
 "let g:syntastic_quiet_warnings = 1
 
-" NeoBundle "wincent/Command-T"
-" map !f :CommandT<Return>
-" map !b :CommandTBuffer<Return>
-" map !t :CommandTTag<Return>
-" map !j :CommandTJump<Return>
 NeoBundle "kien/ctrlp.vim"
-map !f :CtrlP<Return>
+let g:ctrlp_map = '!f'
 map !t :CtrlPTag<Return>
 map !b :CtrlPBuffer<Return>
 map !j :CtrlPMRUFiles<Return>
 let g:ctrlp_dotfiles=0
 let g:ctrlp_working_path_mode=0
 let g:ctrlp_clear_cache_on_exit=0
+let g:ctrlp_match_window_reversed=0
 
 NeoBundle "majutsushi/tagbar"
 map !e :TagbarToggle<Return>
@@ -200,12 +196,12 @@ function MoveTabRight()
    endif
 endfunction
 
-map <S-Tab><Right> :call MoveTabRight()<Return>
-map <S-Tab><Left>  :call MoveTabLeft()<Return>
-
-map <Tab><Tab>     :tab split<Return>
-
-map ² :Explore<Return>
+map ²<Up>           :tab split<Return>
+map ²<Down>         :tabclose<Return>
+map ²<Right>        :tabnext<Return>
+map ²<Left>         :tabprevious<Return>
+map ²²<Right> :call MoveTabRight()<Return>
+map ²²<Left>  :call MoveTabLeft()<Return>
 
 "Quick and dirty call to a build script
 map !! :w<Return> :cexpr system("./build.sh")<Return>
