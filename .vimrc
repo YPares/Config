@@ -203,6 +203,9 @@ map ²<Left>         :tabprevious<Return>
 map ²²<Right> :call MoveTabRight()<Return>
 map ²²<Left>  :call MoveTabLeft()<Return>
 
+map <C-N> :tnext<Return>
+map <C-P> :tprevious<Return>
+
 "Quick and dirty call to a build script
 map !! :w<Return> :cexpr system("./build.sh")<Return>
 
