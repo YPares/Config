@@ -196,12 +196,11 @@ function MoveTabRight()
    endif
 endfunction
 
-map ²<Up>           :tab split<Return>
-map ²<Down>         :tabclose<Return>
-map ²<Right>        :tabnext<Return>
-map ²<Left>         :tabprevious<Return>
-map ²²<Right> :call MoveTabRight()<Return>
-map ²²<Left>  :call MoveTabLeft()<Return>
+map ²²       :tab split<Return>
+map ²<Right> :tabnext<Return>
+map ²<Left>  :tabprevious<Return>
+map ²<Up>    :call MoveTabRight()<Return>
+map ²<Down>  :call MoveTabLeft()<Return>
 
 map <C-N> :tnext<Return>
 map <C-P> :tprevious<Return>
