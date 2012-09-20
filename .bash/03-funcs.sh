@@ -103,10 +103,26 @@ githubclone()
     git clone "https://github.com/$repo.git" "$@"
 }
 
+SAVES_DIR=/Data/Dropbox/Saves
+
+__linkSave()
+{
+    [ -e "$2" ] && rm -rf "$2"
+    ln -s "$1" "$2"
+}
+
 setupSaves()
 {
-    for i in /Data/Software/Saves/home/*; do f="$HOME/.`basename "$i"`"; [ -e "$f" ] || ln -s "$i" "$f"; done
+    for i in $SAVES_DIR/home/*; do f="$HOME/.`basename "$i"`"; __linkSave "$i" "$f"; done
 
-    for i in /Data/Software/Saves/local-share/*; do f="$HOME/.local/share/`basename "$i"`"; [ -e "$f" ] || ln -s "$i" "$f"; done
+    for i in $SAVES_DIR/local-share/*; do f="$HOME/.local/share/`basename "$i"`"; __linkSave "$i" "$f"; done
+
+    for i in $SAVES_DIR/special/*; do
+        if [ -d "$i" ]; then
+            syncdir=$(head -n1 "$i.syncdir")
+            f=$(eval "echo \"$syncdir\"")  # expand variables
+            __linkSave "$i" "$f"
+        fi
+    done
 }
 
