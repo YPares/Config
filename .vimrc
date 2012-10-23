@@ -179,10 +179,10 @@ map  <End>  g<End>
 imap <Home> <Esc>g<Home>i
 imap <End>  <Esc>g<End>i
 
-map <M-Right> <C-W>l
-map <M-Left>  <C-W>h
-map <M-Down>  <C-W>j
-map <M-Up>    <C-W>k
+map <M-Right> <C-W>5>
+map <M-Left>  <C-W>5<
+map <M-Down>  <C-W>5+
+map <M-Up>    <C-W>5-
 
 " To move the tabs
 function MoveTabLeft()
