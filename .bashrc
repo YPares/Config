@@ -13,8 +13,6 @@ if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
 
-PS1='[${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[00m\] \[\033[01;34m\]\W\[\033[00m\]]\$ '
-
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -25,4 +23,6 @@ fi
 for f in ~/.bash/*.sh; do
   . "$f"
 done
+
+PS1='${debian_chroot:+($debian_chroot)}\[\033[01;35m\]@\h\[\033[00m\] \[\033[01;34m\]\W\[\033[00m\]\$ '
 
