@@ -127,6 +127,8 @@ let g:ctrlp_match_window_reversed=0
 
 NeoBundle "majutsushi/tagbar"
 map !e :TagbarOpenAutoClose<Return>
+let g:tagbar_left=1
+let g:tagbar_sort=0
 
 NeoBundle "Lokaltog/vim-powerline"
 set laststatus=2  " Always display statusline
