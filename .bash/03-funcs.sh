@@ -103,8 +103,6 @@ githubclone()
     git clone "https://github.com/$repo.git" "$@"
 }
 
-SAVES_DIR=/Data/Dropbox/Saves
-
 __linkSave()
 {
     [ -e "$2" ] && rm -rf "$2"

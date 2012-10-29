@@ -10,3 +10,5 @@ export LIBRARY_PATH="$LD_LIBRARY_PATH"
 
 export HASKELL_SANDBOXES="/Data/Devel/Sandboxes/Haskell"
 
+export SAVES_DIR=$HOME/Dropbox/Saves
+
