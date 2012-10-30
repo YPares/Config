@@ -59,3 +59,8 @@ alias dx="darcs"
 alias sc="mkdir -p _classes; fsc -d _classes"
 alias scala="scala -cp _classes"
 
+if [ -n "`which clojure`" ]; then
+    alias clj="clojure"
+else alias clj="lein repl"
+fi
+
