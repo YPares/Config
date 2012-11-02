@@ -151,11 +151,18 @@ NeoBundle "ujihisa/neco-ghc"
 NeoBundle "dag/vim2hs"
 NeoBundle "kana/vim-filetype-haskell"
 
+" Lisp-related plugins
+
 NeoBundle "vim-scripts/VimClojure"
+let vimclojure#HighlightBuiltins=1
+let vimclojure#ParenRainbow=1
+
+NeoBundle "jpalardy/vim-slime"
+let g:slime_target="tmux"
+
+" Semantic web-related plugins
 
 NeoBundle "vim-scripts/n3.vim"
-
-NeoBundle "vim-scripts/VimClojure"
 
 "EndOptsGroup:NeoBundle
 
