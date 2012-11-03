@@ -153,12 +153,16 @@ NeoBundle "kana/vim-filetype-haskell"
 
 " Lisp-related plugins
 
-NeoBundle "vim-scripts/VimClojure"
-let vimclojure#HighlightBuiltins=1
-let vimclojure#ParenRainbow=1
-
 NeoBundle "jpalardy/vim-slime"
 let g:slime_target="tmux"
+
+NeoBundle "https://bitbucket.org/kovisoft/slimv"
+let g:slimv_swank_cmd='! xterm -e sbcl --load /usr/share/common-lisp/source/slime/start-swank.lisp &'
+let g:lisp_rainbow=1
+
+NeoBundle "vim-scripts/VimClojure"
+" Must be loaded after slimv to override syntax highlighting
+let vimclojure#ParenRainbow=1
 
 " Semantic web-related plugins
 
