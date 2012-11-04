@@ -159,6 +159,9 @@ let g:slime_target="tmux"
 NeoBundle "https://bitbucket.org/kovisoft/slimv"
 let g:slimv_swank_cmd='! xterm -e sbcl --load /usr/share/common-lisp/source/slime/start-swank.lisp &'
 let g:lisp_rainbow=1
+au BufWinEnter REPL inoremap <buffer> <C-W> <Esc><C-W>
+au BufEnter REPL execute 'normal G' | startinsert!
+au BufLeave REPL stopinsert
 
 NeoBundle "vim-scripts/VimClojure"
 " Must be loaded after slimv to override syntax highlighting
