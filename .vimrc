@@ -166,8 +166,9 @@ au BufEnter REPL execute 'normal G' | startinsert!
 au BufLeave REPL stopinsert
 
 NeoBundle "vim-scripts/VimClojure"
-" Must be loaded after slimv to override syntax highlighting
 let vimclojure#ParenRainbow=1
+let maplocalleader=','
+let vimclojure#WantNailgun=1  " Requires: vimclojure-nailgun-client (ng) & lein-tarsier (in plugins of ~/.lein/profiles.clj)
 
 " Semantic web-related plugins
 
