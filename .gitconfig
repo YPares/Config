@@ -14,6 +14,7 @@
   st = status -s -uno
   f = fetch
   m = merge
+  up = merge --ff-only
   ci = commit
   cit = commit -uno
   b = branch
