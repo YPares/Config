@@ -10,8 +10,8 @@
   ui = true
 [alias]
   ls = ls-tree --name-only HEAD
-  s = status -s
-  st = status -s -uno
+  s = status -s -uno
+  su = status -s
   f = fetch
   m = merge
   up = merge --ff-only
@@ -19,6 +19,7 @@
   cit = commit -uno
   b = branch
   co = checkout
+  st = subtree
   l = log --graph --decorate
   la = log --graph --decorate --all
   g = log --graph --decorate --oneline
