@@ -19,7 +19,8 @@
   cit = commit -uno
   b = branch
   co = checkout
-  l = log --decorate
+  l = log --graph --decorate
+  la = log --graph --decorate --all
   g = log --graph --decorate --oneline
   gb = log --graph --decorate --oneline --branches
   gr = log --graph --decorate --oneline --remotes
