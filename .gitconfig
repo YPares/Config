@@ -8,6 +8,8 @@
   prompt = false
 [color]
   ui = true
+[push]
+	default = upstream
 [alias]
   ls = ls-tree --name-only HEAD
   s = status -s -uno
@@ -36,4 +38,3 @@
 [user]
 	name = YwenP
 	email = yves.pares@gmail.com
-
