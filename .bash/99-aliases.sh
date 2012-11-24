@@ -34,7 +34,6 @@ alias sagi="sudo apt-get install"
 
 alias ed="ed -p'> '"
 
-alias ipython="ipython -nobanner -noconfirm_exit"
 alias py="ipython"
 alias mkpy="echo '#encoding=UTF-8
 
