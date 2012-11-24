@@ -59,7 +59,7 @@ au BufLeave REPL stopinsert
 NeoBundle "vim-scripts/VimClojure"
 let vimclojure#ParenRainbow=1
 let maplocalleader=','
-" let vimclojure#WantNailgun=1  " Requires: vimclojure-nailgun-client (ng) & lein-tarsier (in plugins of ~/.lein/profiles.clj)
+"let vimclojure#WantNailgun=1  " Requires: vimclojure-nailgun-client (ng) & lein-tarsier (in plugins of ~/.lein/profiles.clj)
 
 " Semantic web-related plugins
 

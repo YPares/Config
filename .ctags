@@ -9,6 +9,11 @@
 --regex-clojure=/\([ \t]*defmethod[ \t]+([-[:alnum:]*+!_:\/.?<>]+)/\1/b,multimethod instance/
 --regex-clojure=/\([ \t]*defonce[ \t]+([-[:alnum:]*+!_:\/.?<>]+)/\1/c,definition (once)/
 --regex-clojure=/\([ \t]*defstruct[ \t]+([-[:alnum:]*+!_:\/.?<>]+)/\1/s,struct/
+--regex-clojure=/\([ \t]*defrecord[ \t]+([-[:alnum:]*+!_:\/.?<>]+)/\1/r,record/
+--regex-clojure=/\([ \t]*deftype[ \t]+([-[:alnum:]*+!_:\/.?<>]+)/\1/t,type/
+--regex-clojure=/\([ \t]*defprotocol[ \t]+([-[:alnum:]*+!_:\/.?<>]+)/\1/p,protocol-definition/
+--regex-clojure=/\([ \t]*extend-protocol[ \t]+([-[:alnum:]*+!_:\/.?<>]+)/\1/p,protocol-instance/
+--regex-clojure=/\([ \t]*extend-type[ \t]+([-[:alnum:]*+!_:\/.?<>]+)/\1/u,type-extension/
 --regex-clojure=/\([ \t]*intern[ \t]+([-[:alnum:]*+!_:\/.?<>]+)/\1/v,intern/
 --regex-clojure=/\([ \t]*ns[ \t]+([-[:alnum:]*+!_:\/.?<>]+)/\1/n,namespace/
 
