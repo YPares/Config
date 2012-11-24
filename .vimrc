@@ -170,7 +170,6 @@ map <C-P> :tprevious<Return>
 map !! :w<Return> :cexpr system("./build.sh")<Return>
 
 set number "Display lines numbers
-set ignorecase "Ignore case while searching
 set shiftwidth=4
 set tabstop=4
 set expandtab
