@@ -40,7 +40,7 @@ let g:ghcmod_ghc_options = split($GHC_STATICOPTS)
 NeoBundle "ujihisa/neco-ghc"
 
 NeoBundle "dag/vim2hs"
-NeoBundle "kana/vim-filetype-haskell"
+" NeoBundle "kana/vim-filetype-haskell"
 
 " Lisp-related plugins
 
