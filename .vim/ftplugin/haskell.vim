@@ -2,8 +2,8 @@ setlocal include=^import\\s*\\(qualified\\)\\?\\s*
 setlocal includeexpr=substitute(v:fname,'\\.','/','g').'.'
 setlocal suffixesadd=hs,lhs,hsc
 
-map <buffer> <silent> _tt :GhcModType<Return>
-map <buffer> _tc :GhcModTypeClear<Return>
+map <buffer> _tt :HdevtoolsType<Return>
+map <buffer> <silent> _tc :HdevtoolsClear<Return>
 
 let b:ghc='ghc -v0 -O0 -outputdir _build.d/vim'
 

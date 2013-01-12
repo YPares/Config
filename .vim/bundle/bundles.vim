@@ -34,8 +34,8 @@ NeoBundle "SirVer/ultisnips"
 
 " Haskell-related plugins
 
-NeoBundle "eagletmt/ghcmod-vim"
-let g:ghcmod_ghc_options = split($GHC_STATICOPTS)
+"let g:ghcmod_ghc_options = split($GHC_STATICOPTS)
+NeoBundle "bitc/vim-hdevtools"
 
 NeoBundle "ujihisa/neco-ghc"
 
