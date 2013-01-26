@@ -37,9 +37,13 @@ NeoBundle "SirVer/ultisnips"
 "let g:ghcmod_ghc_options = split($GHC_STATICOPTS)
 NeoBundle "bitc/vim-hdevtools"
 
+NeoBundle "bitc/lushtags"
+
 NeoBundle "ujihisa/neco-ghc"
 
 NeoBundle "dag/vim2hs"
+let g:haskell_conceal_enumerations = 0
+let g:haskell_autotags = 1  " Use this way, requires 'fast-tags' to be installed and in $PATH
 " NeoBundle "kana/vim-filetype-haskell"
 
 " Lisp-related plugins

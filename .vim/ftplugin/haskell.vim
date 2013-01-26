@@ -2,6 +2,9 @@ setlocal include=^import\\s*\\(qualified\\)\\?\\s*
 setlocal includeexpr=substitute(v:fname,'\\.','/','g').'.'
 setlocal suffixesadd=hs,lhs,hsc
 
+set shiftwidth=2
+set tabstop=2
+
 map <buffer> _tt :HdevtoolsType<Return>
 map <buffer> <silent> _tc :HdevtoolsClear<Return>
 
