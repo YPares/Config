@@ -7,6 +7,7 @@ set tabstop=2
 
 map <buffer> _tt :HdevtoolsType<Return>
 map <buffer> <silent> _tc :HdevtoolsClear<Return>
+map <buffer> _ti :HdevtoolsInfo<Return>
 
 let b:ghc='ghc -v0 -O0 -outputdir _build.d/vim'
 

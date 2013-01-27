@@ -35,7 +35,7 @@ NeoBundle "SirVer/ultisnips"
 " Haskell-related plugins
 
 "let g:ghcmod_ghc_options = split($GHC_STATICOPTS)
-NeoBundle "bitc/vim-hdevtools"
+NeoBundle "YPares/vim-hdevtools"
 
 NeoBundle "bitc/lushtags"
 
