@@ -1,5 +1,6 @@
 [merge]
   tool = meld
+  defaultToUpstream = true
 [diff]
   tool = meld
 [difftool]
@@ -15,8 +16,8 @@
   s = status -s -uno
   su = status -s
   f = fetch
-  m = merge
-  up = merge --ff-only
+  ff = merge --ff-only
+  rb = rebase
   ci = commit
   cit = commit -uno
   b = branch
@@ -36,5 +37,5 @@
   dt = difftool
   mt = mergetool
 [user]
-	name = YwenP
-	email = yves.pares@gmail.com
+  name = YwenP
+  email = yves.pares@gmail.com
