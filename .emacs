@@ -7,6 +7,13 @@
                       starter-kit-lisp
                       starter-kit-bindings
                       starter-kit-eshell
+
+                      evil
+                      evil-paredit
+
+                      nlinum
+                      rainbow-delimiters
+
                       clojure-mode
                       clojure-test-mode
                       nrepl
@@ -18,7 +25,9 @@
   (when (not (package-installed-p p))
     (package-install p)))
 
+(setq-default read-file-name-completion-ignore-case t)
 
+;(evil-mode 1)
 (global-rainbow-delimiters-mode)
 
 ;;; ELISP ;;;
@@ -42,4 +51,3 @@
 (require 'ghc)  ;; ghc package
 (autoload 'ghc-init "ghc" nil t)
 (add-hook 'haskell-mode-hook (lambda () (ghc-init) (flymake-mode)))
-
