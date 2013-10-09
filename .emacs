@@ -19,16 +19,29 @@
                       nrepl
 
                       haskell-mode
-                      ghc))
+                      ghc
+
+                      ttl-mode
+                      omn-mode ;; A mode for OWL Manchester Notation
+                      ))
 
 (dolist (p my-packages)
   (when (not (package-installed-p p))
     (package-install p)))
 
+;; Those won't be loaded elsewise:
+(load-library "evil-paredit")
+(load-library "ttl-mode")
+(load-library "omn-mode")
+
 (setq-default read-file-name-completion-ignore-case t)
 
-;(evil-mode 1)
 (global-rainbow-delimiters-mode)
+
+;;; EVIL ;;;
+
+(add-hook 'paredit-mode-hook 'evil-paredit-mode)
+
 
 ;;; ELISP ;;;
 
@@ -38,6 +51,8 @@
 
 (add-hook 'clojure-mode-hook 'paredit-mode)
 (add-hook 'clojure-mode-hook 'subword-mode)
+(add-hook 'nrepl-mode-hook 'paredit-mode)
+(add-hook 'nrepl-mode-hook 'subword-mode)
 
 ;; nrepl settings
 (setq nrepl-popup-stacktraces nil)
@@ -51,3 +66,15 @@
 (require 'ghc)  ;; ghc package
 (autoload 'ghc-init "ghc" nil t)
 (add-hook 'haskell-mode-hook (lambda () (ghc-init) (flymake-mode)))
+
+;;; Automodes for file types ;;;
+
+(add-to-list 'auto-mode-alist
+             '("\\.ttl" . ttl-mode))
+
+(recentf-mode)
+
+;; ORG-mode
+
+(setq org-log-done t)
+
