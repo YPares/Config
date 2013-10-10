@@ -34,12 +34,20 @@ NeoBundle "SirVer/ultisnips"
 
 " Haskell-related plugins
 
-"let g:ghcmod_ghc_options = split($GHC_STATICOPTS)
-NeoBundle "YPares/vim-hdevtools"
+let g:ghcmod_ghc_options = split($GHC_STATICOPTS)
+NeoBundle "eagletmt/ghcmod-vim"
+map <buffer> _tt :GhcModType<Return>
+map <buffer> <silent> _tc :GhcModTypeClear<Return>
+map <buffer> _ti :GhcModInfoPreview<Return>
+"NeoBundle "YPares/vim-hdevtools"
+"map <buffer> _tt :HdevtoolsType<Return>
+"map <buffer> <silent> _tc :HdevtoolsClear<Return>
+"map <buffer> _ti :HdevtoolsInfo<Return>
 
 NeoBundle "bitc/lushtags"
 
 NeoBundle "ujihisa/neco-ghc"
+let g:necoghc_enable_detailed_browse = 1  " Types shown along with names
 
 NeoBundle "dag/vim2hs"
 let g:haskell_conceal_enumerations = 0
@@ -48,21 +56,21 @@ let g:haskell_autotags = 1  " Use this way, requires 'fast-tags' to be installed
 
 " Lisp-related plugins
 
-NeoBundle "jpalardy/vim-slime"
-let g:slime_target="tmux"
+"NeoBundle "jpalardy/vim-slime"
+"let g:slime_target="tmux"
 
-NeoBundle "https://bitbucket.org/kovisoft/slimv"
-let g:slimv_disable_clojure=1
-let g:slimv_disable_scheme=1
-let g:slimv_impl='sbcl'
-let g:lisp_rainbow=1
-au BufWinEnter REPL inoremap <buffer> <C-W> <Esc><C-W>
-au BufEnter REPL execute 'normal G' | startinsert!
-au BufLeave REPL stopinsert
+"NeoBundle "https://bitbucket.org/kovisoft/slimv"
+"let g:slimv_disable_clojure=1
+"let g:slimv_disable_scheme=1
+"let g:slimv_impl='sbcl'
+"let g:lisp_rainbow=1
+"au BufWinEnter REPL inoremap <buffer> <C-W> <Esc><C-W>
+"au BufEnter REPL execute 'normal G' | startinsert!
+"au BufLeave REPL stopinsert
 
-NeoBundle "vim-scripts/VimClojure"
-let vimclojure#ParenRainbow=1
-let maplocalleader=','
+"NeoBundle "vim-scripts/VimClojure"
+"let vimclojure#ParenRainbow=1
+"let maplocalleader=','
 "let vimclojure#WantNailgun=1  " Requires: vimclojure-nailgun-client (ng) & lein-tarsier (in plugins of ~/.lein/profiles.clj)
 
 " Semantic web-related plugins
