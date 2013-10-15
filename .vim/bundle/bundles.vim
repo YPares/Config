@@ -47,7 +47,8 @@ map <buffer> _ti :GhcModInfoPreview<Return>
 NeoBundle "bitc/lushtags"
 
 NeoBundle "ujihisa/neco-ghc"
-let g:necoghc_enable_detailed_browse = 1  " Types shown along with names
+let g:necoghc_enable_detailed_browse = 1  " Types shown along with names,
+""cool but slow
 
 NeoBundle "dag/vim2hs"
 let g:haskell_conceal_enumerations = 0
