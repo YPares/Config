@@ -36,19 +36,17 @@
 (load-library "ttl-mode")
 (load-library "omn-mode")
 
-(setq-default read-file-name-completion-ignore-case t)
-
 ;;; MOVEMENT (buffers & windows)
 
 (when (fboundp 'windmove-default-keybindings)
   (windmove-default-keybindings)) ; if available, move between windows
                                         ; with Shift+arrow keys
 
-;;; Automodes for file types ;;;
+;;; Opening files ;;;
 
 (add-to-list 'auto-mode-alist
              '("\\.ttl" . ttl-mode))
-
+(setq-default read-file-name-completion-ignore-case t)
 (recentf-mode)
 
 ;;; EVIL ;;;
@@ -77,7 +75,8 @@
 
 ;;; HASKELL ;;;
 
-(add-hook 'haskell-mode-hook 'haskell-indentation-mode)
+(add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
+(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
 
 (autoload 'ghc-init "ghc" nil t)
 (add-hook 'haskell-mode-hook

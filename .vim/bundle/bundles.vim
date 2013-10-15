@@ -3,7 +3,7 @@ NeoBundle "Shougo/vimproc"
 NeoBundle "Shougo/neocomplcache"
 let g:neocomplcache_enable_at_startup = 1  " If too heavy, disable and use manually :NeoComplCacheEnable
 
-"NeoBundle "scrooloose/syntastic"
+NeoBundle "scrooloose/syntastic"
 "let g:syntastic_quiet_warnings = 1
 
 NeoBundle "kien/ctrlp.vim"
@@ -48,7 +48,7 @@ NeoBundle "bitc/lushtags"
 
 NeoBundle "ujihisa/neco-ghc"
 let g:necoghc_enable_detailed_browse = 1  " Types shown along with names,
-""cool but slow
+                                          " cool but slow
 
 NeoBundle "dag/vim2hs"
 let g:haskell_conceal_enumerations = 0

@@ -148,7 +148,7 @@ map <C-P> :tprevious<Return>
 "Quick and dirty call to a build script
 map !! :w<Return> :cexpr system("./build.sh")<Return>
 
-set number "Display lines numbers
+set relativenumber "Display lines numbers relatively to current line
 set shiftwidth=4
 set tabstop=4
 set expandtab
