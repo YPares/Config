@@ -9,7 +9,7 @@ function haskell#goto_beginning_decl_with_opts(search_opts)
   call search('^\S', 'b' . a:search_opts)
   let curword = expand('<cword>')
   if index(['data', 'type', 'newtype', 'class', 'instance', 'module', 'import', 'where'], curword) == -1
-    call search('^' . curword, 'b')
+    call search('^' . curword, 'bW')
     return curword
   endif
   return ''
