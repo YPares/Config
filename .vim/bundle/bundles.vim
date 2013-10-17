@@ -2,6 +2,8 @@ NeoBundle "Shougo/neobundle.vim"
 NeoBundle "Shougo/vimproc"
 NeoBundle "Shougo/neocomplcache"
 let g:neocomplcache_enable_at_startup = 1  " If too heavy, disable and use manually :NeoComplCacheEnable
+let g:neocomplcache_auto_completion_start_length = 2
+"let g:neocomplcache_max_list = 10
 
 NeoBundle "scrooloose/syntastic"
 "let g:syntastic_quiet_warnings = 1
@@ -36,13 +38,7 @@ NeoBundle "SirVer/ultisnips"
 
 let g:ghcmod_ghc_options = split($GHC_STATICOPTS)
 NeoBundle "eagletmt/ghcmod-vim"
-map <buffer> _tt :GhcModType<Return>
-map <buffer> <silent> _tc :GhcModTypeClear<Return>
-map <buffer> _ti :GhcModInfoPreview<Return>
 "NeoBundle "YPares/vim-hdevtools"
-"map <buffer> _tt :HdevtoolsType<Return>
-"map <buffer> <silent> _tc :HdevtoolsClear<Return>
-"map <buffer> _ti :HdevtoolsInfo<Return>
 
 NeoBundle "bitc/lushtags"
 
