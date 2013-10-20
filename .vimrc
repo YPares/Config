@@ -89,6 +89,9 @@ source ~/.vim/bundle/bundles.vim
 
 "EndOptsGroup:NeoBundle
 
+set path+=src
+" Look into src subdirectory (with 'gf' notably)
+
 "OptsGroup:LaTeX
 
 " IMPORTANT: grep will sometimes skip displaying the file name if you
