@@ -5,7 +5,7 @@ let g:neocomplcache_enable_at_startup = 1  " If too heavy, disable and use manua
 let g:neocomplcache_auto_completion_start_length = 2
 "let g:neocomplcache_max_list = 10
 
-NeoBundle "scrooloose/syntastic"
+"NeoBundle "scrooloose/syntastic"
 "let g:syntastic_quiet_warnings = 1
 
 NeoBundle "kien/ctrlp.vim"

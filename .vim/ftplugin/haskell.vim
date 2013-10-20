@@ -10,8 +10,13 @@ map <silent> ]] :call haskell#goto_beginning_next_decl()<Return>
 
 map <buffer> _tt :GhcModType<Return>
 map <buffer> <silent> _tr :GhcModTypeClear<Return>
-map <buffer> _ti :GhcModTypeInsert<Return>
+map <buffer> _ti :w<Return>:GhcModTypeInsert<Return>
 map <buffer> _i :GhcModInfoPreview<Return>
+map <buffer> _c :w<Return>:GhcModCheckAsync<Return>
+map <buffer> _f :cfirst<Return>
+map <buffer> _cf :w<Return>:GhcModCheck<Return>:cfirst<Return>
+map <buffer> _n :cnext<Return>
+map <buffer> _p :cprevious<Return>
 "map <buffer> _tt :HdevtoolsType<Return>
 "map <buffer> <silent> _tc :HdevtoolsClear<Return>
 "map <buffer> _ti :HdevtoolsInfo<Return>
