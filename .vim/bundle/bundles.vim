@@ -10,10 +10,14 @@ let g:neocomplcache_auto_completion_start_length = 2
 
 NeoBundle "kien/ctrlp.vim"
 let g:ctrlp_map = '!f'
+map !r :CtrlPRoot<Return>
+map !w :CtrlPLastMode<Return>
+map !d :CtrlPDir<Return>
 map !t :CtrlPTag<Return>
 map !b :CtrlPBuffer<Return>
 map !j :CtrlPMRUFiles<Return>
 let g:ctrlp_dotfiles=0
+let g:ctrlp_root_markers = ['_vim_ctrlp_root', '.vim_ctrlp_root']
 let g:ctrlp_working_path_mode=0
 let g:ctrlp_clear_cache_on_exit=0
 let g:ctrlp_match_window_reversed=0

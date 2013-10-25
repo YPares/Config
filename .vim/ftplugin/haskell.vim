@@ -11,7 +11,7 @@ map <silent> ]] :call haskell#goto_beginning_next_decl()<Return>
 map <buffer> _tt :GhcModType<Return>
 map <buffer> <silent> _tr :GhcModTypeClear<Return>
 map <buffer> _ti :w<Return>:GhcModTypeInsert<Return>
-map <buffer> _i :GhcModInfoPreview<Return>
+map <buffer> _i :GhcModInfoPreview!<Return>
 map <buffer> _c :w<Return>:GhcModCheckAsync<Return>
 map <buffer> _f :cfirst<Return>
 map <buffer> _cf :w<Return>:GhcModCheck<Return>:cfirst<Return>
