@@ -18,7 +18,7 @@
 
                       clojure-mode
                       clojure-test-mode
-                      nrepl
+                      cider
 
                       haskell-mode
                       ghc
@@ -65,13 +65,10 @@
 
 (add-hook 'clojure-mode-hook 'paredit-mode)
 (add-hook 'clojure-mode-hook 'subword-mode)
-(add-hook 'nrepl-mode-hook 'paredit-mode)
-(add-hook 'nrepl-mode-hook 'subword-mode)
-
-;; nrepl settings
-(setq nrepl-popup-stacktraces nil)
-(add-hook 'nrepl-interaction-mode-hook
-	  'nrepl-turn-on-eldoc-mode)
+(add-hook 'cider-mode-hook 'paredit-mode)
+(add-hook 'cider-mode-hook 'subword-mode)
+(add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
+(setq cider-repl-popup-stacktraces t)
 
 ;;; HASKELL ;;;
 
