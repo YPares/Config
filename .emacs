@@ -1,9 +1,3 @@
-;; Cosmetics
-
-(set-background-color "grey92")
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
 (require 'package)
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
@@ -31,6 +25,8 @@
 
                       ttl-mode
                       omn-mode ;; A mode for OWL Manchester Notation
+
+                      zenburn-theme
                       ))
 
 (dolist (p my-packages)
@@ -41,6 +37,10 @@
 (load-library "evil-paredit")
 (load-library "ttl-mode")
 (load-library "omn-mode")
+
+;; COSMETICS
+
+(load-theme 'zenburn t)
 
 ;;; MOVEMENT (buffers & windows)
 
@@ -58,6 +58,7 @@
 ;;; EVIL ;;;
 
 ;; (add-hook 'paredit-mode-hook 'evil-paredit-mode)
+
 
 ;;; GENERAL LISP ;;;
 
@@ -100,3 +101,15 @@
 ;; ORG-mode
 
 (setq org-log-done t)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes (quote ("e3897e34374bb23eac6c77e5ab0eba99b875f281a3b3b099ca0dc46aab25bbd5" "4c9ba94db23a0a3dea88ee80f41d9478c151b07cb6640b33bfc38be7c2415cc4" "d63e19a84fef5fa0341fa68814200749408ad4a321b6d9f30efc117aeaf68a2e" default))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
