@@ -1,4 +1,8 @@
-export EDITOR=vim
+if [ "x$EMACS" = "xt" ]; then
+    export EDITOR=emacsclient
+else
+    export EDITOR=vim
+fi
 #export PYTHONSTARTUP=$HOME/.pythonrc.py
 
 export PATH="$PATH:$HOME/.bin:$HOME/.cabal/bin:$HOME/.cabal-sandboxes/exes/bin"
