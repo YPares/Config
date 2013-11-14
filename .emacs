@@ -60,6 +60,7 @@
 ;;; EVIL ;;;
 
 ;; (add-hook 'paredit-mode-hook 'evil-paredit-mode)
+(global-set-key (kbd "C-*") 'evil-search-symbol-forward)
 
 
 ;;; GENERAL LISP ;;;
