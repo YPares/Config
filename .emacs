@@ -70,7 +70,6 @@
 (global-rainbow-delimiters-mode)
 
 (global-set-key (kbd "M-RET") 'completion-at-point)
-(global-set-key (kbd "C-c C-e") 'eval-last-sexp)
 (global-set-key (kbd "M-k") 'kill-sexp)
 (global-set-key (kbd "M-K") 'backward-kill-sexp)
 (global-set-key (kbd "C-M-k") 'kill-sentence)
