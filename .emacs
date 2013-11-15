@@ -23,6 +23,8 @@
                       haskell-mode
                       ghc
 
+                      inf-ruby
+
                       ttl-mode
                       omn-mode ;; A mode for OWL Manchester Notation
                       yaml-mode
@@ -116,7 +118,11 @@
     (define-key haskell-mode-map (kbd "C-c M-.") nil)
     (define-key haskell-mode-map (kbd "C-c C-d") nil)))
 
-;; ORG-mode
+;;; RUBY ;;;
+
+(add-hook 'ruby-mode-hook (lambda () (local-set-key "\r" 'newline-and-indent)))
+
+;;; ORG-mode ;;;
 
 (setq org-log-done t)
 (custom-set-variables
