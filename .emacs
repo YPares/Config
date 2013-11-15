@@ -71,6 +71,9 @@
 
 (global-set-key (kbd "M-RET") 'completion-at-point)
 (global-set-key (kbd "C-c C-e") 'eval-last-sexp)
+(global-set-key (kbd "M-k") 'kill-sexp)
+(global-set-key (kbd "M-K") 'backward-kill-sexp)
+(global-set-key (kbd "C-M-k") 'kill-sentence)
 
 (define-key paredit-mode-map (kbd "M-f") 'paredit-forward)
 (define-key paredit-mode-map (kbd "M-b") 'paredit-backward)
@@ -78,8 +81,6 @@
 (define-key paredit-mode-map (kbd "M-d") 'paredit-forward-down)
 (define-key paredit-mode-map (kbd "M-n") 'paredit-forward-up)
 (define-key paredit-mode-map (kbd "M-p") 'paredit-backward-down)
-(define-key paredit-mode-map (kbd "M-k") 'kill-sexp)
-(define-key paredit-mode-map (kbd "C-M-k") 'backward-kill-sexp)
 (define-key paredit-mode-map (kbd "M-t") 'transpose-sexps)
 (define-key paredit-mode-map (kbd "M-}") 'paredit-forward-barf-sexp)
 (define-key paredit-mode-map (kbd "M-{") 'paredit-backward-barf-sexp)
