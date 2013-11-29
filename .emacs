@@ -97,6 +97,11 @@
 (add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
 (setq cider-repl-popup-stacktraces t)
 
+(eval-after-load "cider-mode"
+  '(progn
+     (define-key cider-mode-map (kbd "C-c C-n") 'cider-repl-set-ns)
+     (define-key cider-mode-map (kbd "C-c M-n") 'cider-eval-ns-form)))
+
 ;;; HASKELL ;;;
 
 (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
