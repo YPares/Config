@@ -124,3 +124,9 @@ setupSaves()
     done
 }
 
+doclib()
+{
+    [[ -d $DOC_SYMLIB_DIR ]] && rm -rf $DOC_SYMLIB_DIR &>/dev/null
+    mkdir $DOC_SYMLIB_DIR
+    cp -RL $([[ -z "$1" ]] && echo -l || echo -s) $DOC_SOURCES_DIRS/* $DOC_SYMLIB_DIR   
+}
