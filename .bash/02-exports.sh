@@ -14,7 +14,7 @@ export LIBRARY_PATH="$LD_LIBRARY_PATH"
 
 export HASKELL_SANDBOXES="/Data/Devel/Sandboxes/Haskell"
 
-export SAVES_DIR=$HOME/Dropbox/Saves
+export SAVES_DIR=/Data/Docs-sources/Dropbox/Saves
 
 export LESS_TERMCAP_mb=$'\E[01;31m'       # begin blinking
 export LESS_TERMCAP_md=$'\E[01;38;5;74m'  # begin bold
