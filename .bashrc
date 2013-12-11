@@ -26,3 +26,5 @@ done
 
 PS1='${debian_chroot:+($debian_chroot)}\[\033[01;35m\]@\h\[\033[00m\] \[\033[01;34m\]\W\[\033[00m\]\$ '
 
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
