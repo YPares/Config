@@ -25,7 +25,7 @@ audiolib()
 {
   [[ -d $MEDIALIB_DIR ]] && rm -rf $MEDIALIB_DIR &>/dev/null
   mkdir $MEDIALIB_DIR
-  cp -RL $([[ -z "$1" ]] && echo -l || echo -s) $AUDIO_DIRS/* $MEDIALIB_DIR &>/dev/null
+  cp -RL $([[ -z "$1" ]] && echo -s || echo -l) $AUDIO_DIRS/* $MEDIALIB_DIR &>/dev/null
 }
 
 
