@@ -124,9 +124,18 @@ setupSaves()
     done
 }
 
+alterDirsPerms()
+{
+    find "$1" -type d -exec chmod $2 {} \;
+}
+
 doclib()
 {
-    [[ -d $DOC_SYMLIB_DIR ]] && rm -rf $DOC_SYMLIB_DIR &>/dev/null
+    [[ -d $DOC_SYMLIB_DIR ]] && {
+        alterDirsPerms $DOC_SYMLIB_DIR +w
+        rm -rf $DOC_SYMLIB_DIR &>/dev/null
+    }
     mkdir $DOC_SYMLIB_DIR
-    cp -RL $([[ -z "$1" ]] && echo -l || echo -s) $DOC_SOURCES_DIRS/* $DOC_SYMLIB_DIR   
+    cp -RL $([[ -z "$1" ]] && echo -l || echo -s) $DOC_SOURCES_DIRS/* $DOC_SYMLIB_DIR
+    alterDirsPerms $DOC_SYMLIB_DIR -w
 }

@@ -24,5 +24,5 @@ export LESS_TERMCAP_me=$'\E[0m'           # end mode
 export LESS_TERMCAP_ue=$'\E[0m'           # end underline
 export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
 
-export DOC_SOURCES_DIRS=/Data/Docs/Sources/*
-export DOC_SYMLIB_DIR=/Data/Docs/_Library
+export DOC_SOURCES_DIRS=/Data/Docs-sources/*
+export DOC_SYMLIB_DIR=$HOME/Documents
