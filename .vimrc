@@ -79,14 +79,14 @@ set nobackup
 set background=light
 
 "OptsGroup:NeoBundle
-
-if has('vim_starting')
-    set runtimepath+=~/.vim/bundle/neobundle.vim/
-endif
-call neobundle#rc(expand('~/.vim/bundle/'))
-filetype on  " For some reason, neobundle#rc breaks the ft detection
-source ~/.vim/bundle/bundles.vim
-
+"-- 
+"-- if has('vim_starting')
+"--     set runtimepath+=~/.vim/bundle/neobundle.vim/
+"-- endif
+"-- call neobundle#rc(expand('~/.vim/bundle/'))
+"-- filetype on  " For some reason, neobundle#rc breaks the ft detection
+"-- source ~/.vim/bundle/bundles.vim
+"-- 
 "EndOptsGroup:NeoBundle
 
 set path+=src

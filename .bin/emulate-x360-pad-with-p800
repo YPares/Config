@@ -1,6 +1,6 @@
 #!/bin/sh
 
-sudo xboxdrv --evdev /dev/input/event14 --evdev-absmap ABS_X=x1,ABS_Y=y1,ABS_RZ=x2,ABS_Z=y2,ABS_HAT0X=dpad_x,ABS_HAT0Y=dpad_y --axismap -Y1=Y1,-Y2=Y2 --evdev-keymap BTN_TOP=b,BTN_TRIGGER=x,BTN_THUMB2=a,BTN_THUMB=y,BTN_BASE3=tl,BTN_BASE4=tr,BTN_BASE=lb,BTN_BASE2=rb,BTN_TOP2=lt,BTN_PINKIE=rt,BTN_BASE5=back,BTN_BASE6=start --mimic-xpad "$@"
+sudo xboxdrv --evdev /dev/input/event15 --evdev-absmap ABS_X=x1,ABS_Y=y1,ABS_RZ=x2,ABS_Z=y2,ABS_HAT0X=dpad_x,ABS_HAT0Y=dpad_y --axismap -Y1=Y1,-Y2=Y2 --evdev-keymap BTN_TOP=b,BTN_TRIGGER=x,BTN_THUMB2=a,BTN_THUMB=y,BTN_BASE3=tl,BTN_BASE4=tr,BTN_BASE=lt,BTN_BASE2=rt,BTN_TOP2=lb,BTN_PINKIE=rb,BTN_BASE5=back,BTN_BASE6=start --mimic-xpad "$@"
 # Add --silent to the opts not to get the events output
 
 # Use jstest on /dev/input/jsX to see which gamepad is which input (but xboxdrv accepts only /dev/input/eventXX files, gamepads should be those with the highest values, event14 or event15 usually).
