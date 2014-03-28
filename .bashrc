@@ -28,3 +28,5 @@ PS1='${debian_chroot:+($debian_chroot)}\[\033[01;35m\]@\h\[\033[00m\] \[\033[01;
 
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+function __vte_prompt_command() { echo -n ""; }

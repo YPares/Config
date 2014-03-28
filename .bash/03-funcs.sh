@@ -132,10 +132,10 @@ alterDirsPerms()
 doclib()
 {
     [[ -d $DOC_SYMLIB_DIR ]] && {
-        alterDirsPerms $DOC_SYMLIB_DIR +w
+#        alterDirsPerms $DOC_SYMLIB_DIR +w
         rm -rf $DOC_SYMLIB_DIR &>/dev/null
     }
     mkdir $DOC_SYMLIB_DIR
     cp -RL $([[ -z "$1" ]] && echo -s || echo -l) $DOC_SOURCES_DIRS/* $DOC_SYMLIB_DIR
-    alterDirsPerms $DOC_SYMLIB_DIR -w
+#    alterDirsPerms $DOC_SYMLIB_DIR -w
 }
