@@ -32,6 +32,8 @@
                       markdown-mode+
                       
                       zenburn-theme
+
+                      rcirc-alertify
                       ))
 
 (dolist (p my-packages)
@@ -140,6 +142,12 @@
 (add-to-list 'auto-mode-alist '("\\.flr$" . flora-mode))
 (autoload 'flora-mode "flora" "Major mode for editing Flora programs." t)
 
+
+;;; IRC ;;;
+
+(setq alert-default-style 'libnotify)
+(rcirc-alertify-enable)
+
 ;;;;;;;;
 
 (custom-set-variables
@@ -152,6 +160,8 @@
  '(fci-rule-color "#383838")
  '(haskell-process-check-cabal-config-on-load t)
  '(haskell-process-type (quote cabal-repl))
+ '(rcirc-default-nick "Ywen")
+ '(rcirc-track-minor-mode t)
  '(vc-annotate-background "#2B2B2B")
  '(vc-annotate-color-map (quote ((20 . "#BC8383") (40 . "#CC9393") (60 . "#DFAF8F") (80 . "#D0BF8F") (100 . "#E0CF9F") (120 . "#F0DFAF") (140 . "#5F7F5F") (160 . "#7F9F7F") (180 . "#8FB28F") (200 . "#9FC59F") (220 . "#AFD8AF") (240 . "#BFEBBF") (260 . "#93E0E3") (280 . "#6CA0A3") (300 . "#7CB8BB") (320 . "#8CD0D3") (340 . "#94BFF3") (360 . "#DC8CC3"))))
  '(vc-annotate-very-old-color "#DC8CC3"))
