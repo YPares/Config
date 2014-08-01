@@ -46,7 +46,7 @@
 (load-library "evil-paredit")
 (load-library "ttl-mode")
 (load-library "omn-mode")
-(load-library "flora")  ;; Not available through packages!
+;(load-library "flora")  ;; Not available through packages!
 
 ;; COSMETICS
 
@@ -112,6 +112,7 @@
 
 (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
+;(add-hook 'haskell-mode-hook 'structured-haskell-mode)
 
 (autoload 'ghc-init "ghc" nil t)
 (add-hook 'haskell-mode-hook
