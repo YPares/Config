@@ -1,6 +1,6 @@
 (require 'package)
 (add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+             '("melpa-stable" . "http://melpa-stable.milkbox.net/packages/") t)
 (add-to-list 'package-archives
 	     '("marmalade" . "http://marmalade-repo.org/packages/") t)
 (package-initialize)
@@ -29,11 +29,11 @@
                       ttl-mode
                       omn-mode ;; A mode for OWL Manchester Notation
                       yaml-mode
-                      markdown-mode+
+                      ;markdown-mode+
                       
                       zenburn-theme
 
-                      rcirc-alertify
+                      ;rcirc-alertify
                       ))
 
 (dolist (p my-packages)
@@ -147,7 +147,7 @@
 ;;; IRC ;;;
 
 (setq alert-default-style 'libnotify)
-(rcirc-alertify-enable)
+;(rcirc-alertify-enable)
 
 ;;;;;;;;
 
