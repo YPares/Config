@@ -1,0 +1,15 @@
+#!/bin/bash
+
+file="$1"
+shift
+groupId="$1"
+
+[ -z "$file" ] && { echo "Usage: $0 jarFile [groupId]" ; echo "  (jarFile must be of the form 'lib-name-stuff-1.0.3.jar')" ; exit 1 ; }
+
+fname=${file##*/}
+artif=${fname%-*}
+[ -z "$groupId" ] && { groupId="$artif" ; }
+verWithExt=${fname##*-}
+ver=${verWithExt%.*}
+echo mvn install:install-file -Dfile="$file" -DartifactId="$artif" -Dversion="$ver" -DgroupId="$groupId" -Dpackaging=jar #-DlocalRepositoryPath=maven_repository
+
