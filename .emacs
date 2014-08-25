@@ -29,7 +29,7 @@
                       ttl-mode
                       omn-mode ;; A mode for OWL Manchester Notation
                       yaml-mode
-                      ;markdown-mode+
+                      markdown-mode
                       
                       zenburn-theme
 
