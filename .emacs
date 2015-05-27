@@ -17,7 +17,7 @@
                       rainbow-delimiters
 
                       clojure-mode
-                      clojure-test-mode
+                      ;clojure-test-mode
                       cider
 
                       haskell-mode
@@ -73,7 +73,7 @@
 
 ;;; GENERAL LISP ;;;
 
-(global-rainbow-delimiters-mode)
+;;(global-rainbow-delimiters-mode)
 
 (global-set-key (kbd "M-RET") 'completion-at-point)
 (global-set-key (kbd "M-k") 'kill-sexp)
@@ -159,6 +159,7 @@
  '(ansi-color-names-vector ["#3F3F3F" "#CC9393" "#7F9F7F" "#F0DFAF" "#8CD0D3" "#DC8CC3" "#93E0E3" "#DCDCCC"])
  '(custom-safe-themes (quote ("5bee853b49605401494a6574d1c5a991a0d75e86fedf5ad9a1577de6cbba7691" "9370aeac615012366188359cb05011aea721c73e1cb194798bc18576025cabeb" "d070fa185078bf753dcfd873ec63be19fa36a55a0c97dc66848a6d20c5fffdad" "e3897e34374bb23eac6c77e5ab0eba99b875f281a3b3b099ca0dc46aab25bbd5" "4c9ba94db23a0a3dea88ee80f41d9478c151b07cb6640b33bfc38be7c2415cc4" "d63e19a84fef5fa0341fa68814200749408ad4a321b6d9f30efc117aeaf68a2e" default)))
  '(fci-rule-color "#383838")
+ '(flymake-allowed-file-name-masks (quote (("\\.\\(?:c\\(?:pp\\|xx\\|\\+\\+\\)?\\|CC\\)\\'" flymake-simple-make-init) ("\\.xml\\'" flymake-xml-init) ("\\.html?\\'" flymake-xml-init) ("\\.cs\\'" flymake-simple-make-init) ("\\.p[ml]\\'" flymake-perl-init) ("\\.php[345]?\\'" flymake-php-init) ("\\.h\\'" flymake-master-make-header-init flymake-master-cleanup) ("\\.java\\'" flymake-simple-make-java-init flymake-simple-java-cleanup) ("[0-9]+\\.tex\\'" flymake-master-tex-init flymake-master-cleanup) ("\\.tex\\'" flymake-simple-tex-init) ("\\.idl\\'" flymake-simple-make-init) ("\\.ino\\'" flymake-simple-make-init))))
  '(haskell-process-check-cabal-config-on-load t)
  '(haskell-process-type (quote cabal-repl))
  '(rcirc-auto-authenticate-flag t)
