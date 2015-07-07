@@ -24,6 +24,8 @@
                       ghc
                       shm
 
+                      nix-mode
+                      
                       inf-ruby
 
                       ttl-mode
