@@ -1,3 +1,7 @@
+ARDUINO_DIR = /opt/arduino
+BOARD_TAG = diecimila
+BOARD_SUB = atmega328
+
 include /usr/local/share/arduino/Arduino.mk
 
 check-syntax:
