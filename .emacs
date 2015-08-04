@@ -5,11 +5,12 @@
 	     '("marmalade" . "http://marmalade-repo.org/packages/") t)
 (package-initialize)
 
-(defvar my-packages '(starter-kit
-                      starter-kit-lisp
-                      starter-kit-bindings
-                      starter-kit-eshell
-
+(defvar my-packages '(;starter-kit
+                      ;starter-kit-lisp
+                      ;starter-kit-bindings
+                      ;starter-kit-eshell
+                      magit
+                      
                       evil
                       evil-paredit
 
@@ -66,6 +67,10 @@
              '("\\.ttl" . ttl-mode))
 (setq-default read-file-name-completion-ignore-case t)
 (recentf-mode)
+
+;;; GIT ;;;
+
+(global-set-key (kbd "C-x g") 'magit-status)
 
 ;;; EVIL ;;;
 
