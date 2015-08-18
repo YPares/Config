@@ -1,8 +1,12 @@
 #!/bin/sh
 
 pdfname="${1/.pdf}"
-tmpdir="${pdfname}-jpgs"
+tmpdir="${pdfname}_tmp"
+jpgsdir="${pdfname}_imgs"
 mkdir -p "$tmpdir"
-convert -colorspace gray -density 200x200 "$1" "${tmpdir}/img_%04d.jpg" \
-    && zip -r "${pdfname}_200dpi.cbz" "$tmpdir" \
-    && rm -rf "$tmpdir"
+mkdir -p "$jpgsdir"
+export MAGICK_TMPDIR="$tmpdir"
+convert -limit memory 2MB -colorspace gray -density 200x200 "$1" "${jpgsdir}/img_%04d.jpg" \
+    && zip -r "${pdfname}_200dpi.cbz" "$jpgsdir" \
+    && rm -rf "$tmpdir" \
+    && rm -rf "$jpgsdir"
