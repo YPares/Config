@@ -7,4 +7,6 @@ mkdir -p "$tmpdir"
 mkdir -p "$jpgsdir"
 export MAGICK_TMPDIR="$tmpdir"
 convert -limit memory 1GB -alpha remove -colorspace gray -density 200x200 "$1" "${jpgsdir}/img_%04d.jpg" \
-    && zip -r "${pdfname}_200dpi.cbz" "$jpgsdir"
+    && zip -r "${pdfname}_200dpi.cbz" "$jpgsdir" \
+    && rmdir "$tmpdir" \
+    && rm -rf "jpgsdir"
