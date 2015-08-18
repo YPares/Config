@@ -36,6 +36,8 @@ shrink ()
 	  -dNOPAUSE -dBATCH -dSAFER		\
 	  -sDEVICE=pdfwrite			\
 	  -dCompatibilityLevel=1.4		\
+	  -dHaveTransparency=false \
+	  -r200 \
           -sProcessColorModel=DeviceGray \
           -sColorConversionStrategy=Gray \
 	  -dPDFSETTINGS=/screen			\
