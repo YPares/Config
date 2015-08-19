@@ -36,23 +36,28 @@ shrink ()
 	  -dNOPAUSE -dBATCH -dSAFER		\
 	  -sDEVICE=pdfwrite			\
 	  -dCompatibilityLevel=1.4		\
-	  -dHaveTransparency=false \
-	  -r200 \
           -sProcessColorModel=DeviceGray \
           -sColorConversionStrategy=Gray \
 	  -dPDFSETTINGS=/screen			\
-	  -sOutputFile="$2"			\
-	  "$1"
+	  -dColorImageResolution="$1"		\
+	  -dGrayImageResolution="$1"		\
+	  -dMonoImageResolution="$1"		\
+	  -sOutputFile="$3"			\
+	  "$2"
+
+# Add these to force rendering of text to image
+#  -dHaveTransparency=false -r200 \
 }
 
 usage ()
 {
 	echo "Reduces PDF filesize by lossy recompressing with Ghostscript."
 	echo "Not guaranteed to succeed, but usually works."
-	echo "  Usage: $1 infile [outfile]"
+	echo "  Usage: $1 images_density_in_DPI infile [outfile]"
 }
 
-IFILE="$1"
+DENSITY="$1"
+IFILE="$2"
 
 # Need an input file:
 if [ -z "$IFILE" ]; then
@@ -61,10 +66,10 @@ if [ -z "$IFILE" ]; then
 fi
 
 # Output filename defaults to "-" (stdout) unless given:
-if [ ! -z "$2" ]; then
-	OFILE="$2"
+if [ ! -z "$3" ]; then
+	OFILE="$3"
 else
 	OFILE="-"
 fi
 
-shrink "$IFILE" "$OFILE" || exit $?
+shrink "$DENSITY" "$IFILE" "$OFILE" || exit $?

@@ -1,12 +1,15 @@
 #!/bin/sh
 
-pdfname="${1/.pdf}"
-tmpdir="${pdfname}_tmp"
-jpgsdir="${pdfname}_imgs"
+[ "$#" -ne 3 ] && { echo "usage: $0 dpi {png|jpg|...} file"; exit 1 ; }
+
+pdfname="${3/.pdf}"
+rnd=`echo $RANDOM$RANDOM`
+tmpdir="${rnd}_tmp"
+jpgsdir="${rnd}_imgs"
 mkdir -p "$tmpdir"
 mkdir -p "$jpgsdir"
 export MAGICK_TMPDIR="$tmpdir"
-convert -limit memory 1GB -alpha remove -colorspace gray -density 200x200 "$1" "${jpgsdir}/img_%04d.jpg" \
-    && zip -r "${pdfname}_200dpi.cbz" "$jpgsdir" \
+convert -limit memory 1GB -alpha remove -colorspace gray -density "$1" "$3" "${jpgsdir}/img_%04d.$2" \
+    && zip -r "${pdfname}_$1dpi_$2.cbz" "$jpgsdir" \
     && rmdir "$tmpdir" \
-    && rm -rf "jpgsdir"
+    && rm -rf "$jpgsdir"
