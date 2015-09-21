@@ -68,6 +68,10 @@
 (setq-default read-file-name-completion-ignore-case t)
 (recentf-mode)
 
+;;; TEXT EDIT ;;;
+
+(setq-default fill-column 80)
+
 ;;; GIT ;;;
 
 (global-set-key (kbd "C-x g") 'magit-status)
