@@ -5,7 +5,7 @@ else
 fi
 #export PYTHONSTARTUP=$HOME/.pythonrc.py
 
-export PATH="$PATH:$HOME/.bin:$HOME/.cabal/bin:$HOME/.cabal-sandboxes/exes/bin:"$HOME/.gem/ruby/*/bin
+export PATH="$PATH:$HOME/.local/bin:$HOME/.cabal/bin:$HOME/.cabal-sandboxes/exes/bin:"$HOME/.gem/ruby/*/bin
 
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/lib"
 export LIBRARY_PATH="$LD_LIBRARY_PATH"
