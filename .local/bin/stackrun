@@ -1,0 +1,8 @@
+#!/bin/bash
+
+prj=$(echo *.cabal)
+prj="${prj/.cabal}"
+exec="${prj}-exe"
+stack exec "$exec" -- "$@"
+# THE -- IS VERY F**KING IMPORTANT!! Or you end up passing options to stack and not your prog
+
