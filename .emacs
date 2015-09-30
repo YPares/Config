@@ -15,6 +15,7 @@
 		      magit
 
                       paredit
+                      flycheck
                       
                       evil
                       evil-paredit
@@ -137,9 +138,12 @@
 
 ;;; HASKELL ;;;
 
-(let ((my-cabal-path (expand-file-name "~/.cabal/bin")))
+(let ((my-cabal-path (expand-file-name "~/.cabal/bin"))
+      (my-local-bin-path (expand-file-name "~/.local/bin")))
   (setenv "PATH" (concat my-cabal-path ":" (getenv "PATH")))
-  (add-to-list 'exec-path my-cabal-path))
+  (setenv "PATH" (concat my-local-bin-path ":" (getenv "PATH")))
+  (add-to-list 'exec-path my-cabal-path)
+  (add-to-list 'exec-path my-local-bin-path))
 
 (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
@@ -153,15 +157,25 @@
 
 (eval-after-load "haskell-mode"
   '(progn
-    (define-key haskell-mode-map (kbd "C-x C-d") nil)
+;    (define-key haskell-mode-map (kbd "C-x C-d") nil)
     (define-key haskell-mode-map (kbd "C-c C-z") 'haskell-interactive-switch)
-    (define-key haskell-mode-map (kbd "C-c C-l") 'haskell-process-load-or-reload)
-    (define-key haskell-mode-map (kbd "C-c C-b") 'haskell-interactive-switch)
-    (define-key haskell-mode-map (kbd "C-c C-t") 'haskell-process-do-type)
-    (define-key haskell-mode-map (kbd "C-c C-i") 'haskell-process-do-info)
+;    (define-key haskell-mode-map (kbd "C-c C-l") 'haskell-process-load-or-reload)
+;    (define-key haskell-mode-map (kbd "C-c C-b") 'haskell-interactive-switch)
+;    (define-key haskell-mode-map (kbd "C-c C-t") 'haskell-process-do-type)
+;    (define-key haskell-mode-map (kbd "C-c C-i") 'haskell-process-do-info)
     ;; ghc-mod does it better
-    (define-key haskell-mode-map (kbd "C-c M-.") nil)
-    (define-key haskell-mode-map (kbd "C-c C-d") nil)))
+;    (define-key haskell-mode-map (kbd "C-c M-.") nil)
+;    (define-key haskell-mode-map (kbd "C-c C-d") nil)
+    ))
+
+;;;;;; STACK-IDE ;;;
+
+(add-to-list 'load-path (expand-file-name "~/stack-ide/stack-mode"))
+(require 'stack-mode)
+(add-hook 'haskell-mode-hook 'stack-mode)
+
+(custom-set-variables
+  '(haskell-process-type 'stack-ghci))
 
 ;;; RUBY ;;;
 
@@ -184,63 +198,7 @@
 
 ;;;;;;;;
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(ansi-color-names-vector
-   ["#3F3F3F" "#CC9393" "#7F9F7F" "#F0DFAF" "#8CD0D3" "#DC8CC3" "#93E0E3" "#DCDCCC"])
- '(custom-safe-themes
-   (quote
-    ("5bee853b49605401494a6574d1c5a991a0d75e86fedf5ad9a1577de6cbba7691" "9370aeac615012366188359cb05011aea721c73e1cb194798bc18576025cabeb" "d070fa185078bf753dcfd873ec63be19fa36a55a0c97dc66848a6d20c5fffdad" "e3897e34374bb23eac6c77e5ab0eba99b875f281a3b3b099ca0dc46aab25bbd5" "4c9ba94db23a0a3dea88ee80f41d9478c151b07cb6640b33bfc38be7c2415cc4" "d63e19a84fef5fa0341fa68814200749408ad4a321b6d9f30efc117aeaf68a2e" default)))
- '(fci-rule-color "#383838")
- '(flymake-allowed-file-name-masks
-   (quote
-    (("\\.\\(?:c\\(?:pp\\|xx\\|\\+\\+\\)?\\|CC\\)\\'" flymake-simple-make-init)
-     ("\\.xml\\'" flymake-xml-init)
-     ("\\.html?\\'" flymake-xml-init)
-     ("\\.cs\\'" flymake-simple-make-init)
-     ("\\.p[ml]\\'" flymake-perl-init)
-     ("\\.php[345]?\\'" flymake-php-init)
-     ("\\.h\\'" flymake-master-make-header-init flymake-master-cleanup)
-     ("\\.java\\'" flymake-simple-make-java-init flymake-simple-java-cleanup)
-     ("[0-9]+\\.tex\\'" flymake-master-tex-init flymake-master-cleanup)
-     ("\\.tex\\'" flymake-simple-tex-init)
-     ("\\.idl\\'" flymake-simple-make-init)
-     ("\\.ino\\'" flymake-simple-make-init))))
- '(haskell-process-check-cabal-config-on-load t)
- '(haskell-process-type (quote cabal-repl))
- '(magit-log-arguments (quote ("--graph" "--color" "--decorate")))
- '(rcirc-auto-authenticate-flag t)
- '(rcirc-default-nick "Ywen")
- '(rcirc-server-alist
-   (quote
-    (("irc.freenode.net" :channels
-      ("#haskell-game" "#clojure" "#haskell-fr" "#haskell")))))
- '(rcirc-track-minor-mode t)
- '(vc-annotate-background "#2B2B2B")
- '(vc-annotate-color-map
-   (quote
-    ((20 . "#BC8383")
-     (40 . "#CC9393")
-     (60 . "#DFAF8F")
-     (80 . "#D0BF8F")
-     (100 . "#E0CF9F")
-     (120 . "#F0DFAF")
-     (140 . "#5F7F5F")
-     (160 . "#7F9F7F")
-     (180 . "#8FB28F")
-     (200 . "#9FC59F")
-     (220 . "#AFD8AF")
-     (240 . "#BFEBBF")
-     (260 . "#93E0E3")
-     (280 . "#6CA0A3")
-     (300 . "#7CB8BB")
-     (320 . "#8CD0D3")
-     (340 . "#94BFF3")
-     (360 . "#DC8CC3"))))
- '(vc-annotate-very-old-color "#DC8CC3"))
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
