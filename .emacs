@@ -8,8 +8,11 @@
 (defvar my-packages '(;starter-kit
                       ;starter-kit-lisp
                       ;starter-kit-bindings
-                      ;starter-kit-eshell
-                      magit
+		      ;starter-kit-eshell
+		      better-defaults
+		      smex
+		      ido-ubiquitous
+		      magit
                       
                       evil
                       evil-paredit
@@ -34,7 +37,7 @@
                       yaml-mode
                       markdown-mode
                       
-                      zenburn-theme
+                      ;zenburn-theme
 
                       ;rcirc-alertify
                       ))
@@ -67,6 +70,13 @@
              '("\\.ttl" . ttl-mode))
 (setq-default read-file-name-completion-ignore-case t)
 (recentf-mode)
+
+;;; IDO/SMEX ;;;
+
+(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "M-X") 'smex-major-mode-commands)
+;; This is your old M-x.
+(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 
 ;;; TEXT EDIT ;;;
 
@@ -179,9 +189,23 @@
    (quote
     ("5bee853b49605401494a6574d1c5a991a0d75e86fedf5ad9a1577de6cbba7691" "9370aeac615012366188359cb05011aea721c73e1cb194798bc18576025cabeb" "d070fa185078bf753dcfd873ec63be19fa36a55a0c97dc66848a6d20c5fffdad" "e3897e34374bb23eac6c77e5ab0eba99b875f281a3b3b099ca0dc46aab25bbd5" "4c9ba94db23a0a3dea88ee80f41d9478c151b07cb6640b33bfc38be7c2415cc4" "d63e19a84fef5fa0341fa68814200749408ad4a321b6d9f30efc117aeaf68a2e" default)))
  '(fci-rule-color "#383838")
- '(flymake-allowed-file-name-masks (quote (("\\.\\(?:c\\(?:pp\\|xx\\|\\+\\+\\)?\\|CC\\)\\'" flymake-simple-make-init) ("\\.xml\\'" flymake-xml-init) ("\\.html?\\'" flymake-xml-init) ("\\.cs\\'" flymake-simple-make-init) ("\\.p[ml]\\'" flymake-perl-init) ("\\.php[345]?\\'" flymake-php-init) ("\\.h\\'" flymake-master-make-header-init flymake-master-cleanup) ("\\.java\\'" flymake-simple-make-java-init flymake-simple-java-cleanup) ("[0-9]+\\.tex\\'" flymake-master-tex-init flymake-master-cleanup) ("\\.tex\\'" flymake-simple-tex-init) ("\\.idl\\'" flymake-simple-make-init) ("\\.ino\\'" flymake-simple-make-init))))
+ '(flymake-allowed-file-name-masks
+   (quote
+    (("\\.\\(?:c\\(?:pp\\|xx\\|\\+\\+\\)?\\|CC\\)\\'" flymake-simple-make-init)
+     ("\\.xml\\'" flymake-xml-init)
+     ("\\.html?\\'" flymake-xml-init)
+     ("\\.cs\\'" flymake-simple-make-init)
+     ("\\.p[ml]\\'" flymake-perl-init)
+     ("\\.php[345]?\\'" flymake-php-init)
+     ("\\.h\\'" flymake-master-make-header-init flymake-master-cleanup)
+     ("\\.java\\'" flymake-simple-make-java-init flymake-simple-java-cleanup)
+     ("[0-9]+\\.tex\\'" flymake-master-tex-init flymake-master-cleanup)
+     ("\\.tex\\'" flymake-simple-tex-init)
+     ("\\.idl\\'" flymake-simple-make-init)
+     ("\\.ino\\'" flymake-simple-make-init))))
  '(haskell-process-check-cabal-config-on-load t)
  '(haskell-process-type (quote cabal-repl))
+ '(magit-log-arguments (quote ("--graph" "--color" "--decorate")))
  '(rcirc-auto-authenticate-flag t)
  '(rcirc-default-nick "Ywen")
  '(rcirc-server-alist
