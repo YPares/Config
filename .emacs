@@ -13,6 +13,8 @@
 		      smex
 		      ido-ubiquitous
 		      magit
+
+                      paredit
                       
                       evil
                       evil-paredit
