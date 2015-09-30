@@ -78,6 +78,10 @@
 ;; This is your old M-x.
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 
+;;; ESHELL ;;;
+
+(global-set-key (kbd "C-x RET") 'eshell)
+
 ;;; TEXT EDIT ;;;
 
 (setq-default fill-column 80)
