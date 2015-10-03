@@ -197,14 +197,16 @@ syncto()
             {
                 cp -Lv "$srcfile" "$dstfile"
             }
-
+            
             case "$(file --mime-type -bL "$srcfile")" in
                 audio/x-flac) 
                     case $flacConversion in
                         ogg)
-                            oggenc $OGGENC_OPTS "$srcfile" -o "${dstfile%.*}.ogg" ;;
+                            dstfile="${dstfile%.*}.ogg"
+                            oggenc $OGGENC_OPTS "$srcfile" -o "$dstfile" ;;
                         mp3)
-                            flac2mp3 "$srcfile" "${dstfile%.*}.mp3" ;;
+                            dstfile="${dstfile%.*}.mp3"
+                            flac2mp3 "$srcfile" "$dstfile" ;;
                         *)
                             rawCopy ;;
                     esac ;;
@@ -218,6 +220,10 @@ syncto()
                 *)  
                     rawCopy ;;
             esac
+
+            if [ -n "$OVERRIDE_ARTIST" ]; then
+                lltag --yes -a "$OVERRIDE_ARTIST" "$dstfile"
+            fi
         }
     done
 }
