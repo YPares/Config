@@ -3,7 +3,14 @@
     {
         myHaskellEnv =
         self.haskellPackages.ghcWithPackages
-            (haskellPackages: with haskellPackages; [
-                mtl QuickCheck random text vector alex happy cabal-install cpphs]);
+            (p: with p; [mtl QuickCheck random text vector alex happy cabal-install cpphs]);
+
+        profiledHaskellPackages = self.haskellPackages.override {
+            overrides = self: super:
+              { mkDerivation = args: super.mkDerivation (args // {
+                    enableLibraryProfiling = true;
+                });
+              };
+        };
     };
 }
