@@ -13,6 +13,7 @@
 		      smex
 		      ido-ubiquitous
 		      magit
+                      anzu ;; anzu-mode shows number of matches when using C-s
 
                       paredit
                       flycheck
@@ -170,9 +171,9 @@
 
 ;;;;;; STACK-IDE ;;;
 
-(add-to-list 'load-path (expand-file-name "~/stack-ide/stack-mode"))
-(require 'stack-mode)
-(add-hook 'haskell-mode-hook 'stack-mode)
+;(add-to-list 'load-path (expand-file-name "~/stack-ide/stack-mode"))
+;(require 'stack-mode)
+;(add-hook 'haskell-mode-hook 'stack-mode)
 
 (custom-set-variables
   '(haskell-process-type 'stack-ghci))
