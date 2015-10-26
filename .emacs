@@ -65,6 +65,8 @@
 
 ;(load-theme 'zenburn t)
 
+(set-face-attribute 'default nil :height 140)
+
 ;;; MOVEMENT (buffers & windows)
 
 (when (fboundp 'windmove-default-keybindings)
