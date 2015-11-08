@@ -1,0 +1,4 @@
+sudo service lightdm stop
+cd ~
+rm  -rf .gconf .gconfd .compiz .config/compiz .config/dconf
+sudo service lightdm restart
