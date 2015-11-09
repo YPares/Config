@@ -23,10 +23,14 @@ callPlayer()
 audiolib()
 {
     [[ -d $MEDIALIB_DIR ]] && rm -rf $MEDIALIB_DIR &>/dev/null
-    mkdir $MEDIALIB_DIR
+    mkdir -p $MEDIALIB_DIR
     cp -RL $([[ -z "$1" ]] && echo -s || echo -l) $AUDIO_DIRS/* $MEDIALIB_DIR &>/dev/null
 }
 
+audiolibFromHere()
+{
+    AUDIO_DIRS=$(readlink -f .)/* audiolib
+}
 
 getwp()
 {
