@@ -1,3 +1,4 @@
+synclient ClickFinger1=1 && synclient TapButton1=0
 # Two fingers click = Middle click. Two fingers tap = Right click
 synclient ClickFinger2=2 && synclient TapButton2=3
 # We deactivate everything with 3 fingers, touchegg deals with it:
