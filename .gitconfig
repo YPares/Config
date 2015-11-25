@@ -6,7 +6,7 @@
 [difftool]
   prompt = false
 [mergetool]
-  prompt = false
+  prompt = true
 [color]
   ui = true
 [push]
@@ -25,7 +25,7 @@
   st = subtree
   l = log --graph --decorate
   la = log --graph --decorate --all
-  g = log --graph --decorate --oneline
+  g = log --graph --pretty=format:'%C(auto)%d %h %s %C(green)%aN'
   gb = log --graph --decorate --oneline --branches
   gr = log --graph --decorate --oneline --remotes
   ga = log --graph --decorate --oneline --all
