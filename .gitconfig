@@ -25,10 +25,10 @@
   st = subtree
   l = log --graph --decorate
   la = log --graph --decorate --all
-  g = log --graph --pretty=format:'%C(auto)%d %h %s %C(green)%aN'
-  gb = log --graph --decorate --oneline --branches
-  gr = log --graph --decorate --oneline --remotes
-  ga = log --graph --decorate --oneline --all
+  g = log --graph --pretty=format:'%C(auto)%h%d %s %C(green)%aN'
+  gb = log --graph --pretty=format:'%C(auto)%h%d %s %C(green)%aN' --branches
+  gr = log --graph --pretty=format:'%C(auto)%h%d %s %C(green)%aN' --remotes
+  ga = log --graph --pretty=format:'%C(auto)%h%d %s %C(green)%aN' --all
   logf = log --decorate --name-status
   logme = !sh -c 'git log --decorate --name-status --author=\"`git config user.name`\"'
   showf = show --decorate --name-status
