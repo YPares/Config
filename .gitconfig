@@ -1,6 +1,9 @@
 [merge]
-  tool = meld
+  tool = mymeld
+  conflictstyle = diff3
   defaultToUpstream = true
+[mergetool "mymeld"]
+  cmd = meld $LOCAL $BASE $REMOTE -o $MERGED --diff $BASE $LOCAL --diff $BASE $REMOTE --auto-merge
 [diff]
   tool = meld
 [difftool]
@@ -10,7 +13,7 @@
 [color]
   ui = true
 [push]
-	default = upstream
+  default = upstream
 [alias]
   ls = ls-tree --name-only HEAD
   s = status -s -uno
