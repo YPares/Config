@@ -191,6 +191,12 @@
 
 (setq org-log-done t)
 
+(org-babel-do-load-languages
+  'org-babel-load-languages
+  '((dot . t)
+    (emacs-lisp . nil)
+    ))
+
 ;;; FLORA-2 mode ;;;
 
 (add-to-list 'auto-mode-alist '("\\.flr$" . flora-mode))
