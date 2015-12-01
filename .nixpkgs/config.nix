@@ -1,4 +1,6 @@
 {
+    allowUnfree = true;
+
     packageOverrides = super: let self = super.pkgs; in
     {
         myHaskellEnv =
@@ -12,5 +14,8 @@
                 });
               };
         };
+
+        rEnv = super.rWrapper;
+     
     };
 }
