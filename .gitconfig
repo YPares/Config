@@ -20,9 +20,8 @@
   su = status -s
   f = fetch
   ff = merge --ff-only
-  rb = rebase
-  ci = commit
-  cit = commit -uno
+  ci = commit -uno
+  ciu = commit
   b = branch
   co = checkout
   st = subtree
@@ -37,6 +36,7 @@
   showf = show --decorate --name-status
   rl = reflog show --decorate
   sb = show-branch
+  d = diff
   dt = difftool
   mt = mergetool
 [user]
