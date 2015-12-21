@@ -1,0 +1,10 @@
+#!/bin/sh
+
+if [ "$(nmcli r wifi)" = 'enabled' ]; then
+    nmcli r wifi off
+    echo "Wifi going OFF."
+else
+    nmcli r wifi on
+    echo "Wifi going ON."
+fi
+
