@@ -29,7 +29,7 @@
   la = log --graph --decorate --all
   g = log --graph --pretty=format:'%C(auto)%h%d %s %C(green)%aN'
   gb = log --graph --pretty=format:'%C(auto)%h%d %s %C(green)%aN' --branches
-  gr = log --graph --pretty=format:'%C(auto)%h%d %s %C(green)%aN' --remotes
+  gr = log --graph --pretty=format:\"%C(auto)%h%d %s %C(green)%aN\" HEAD~~~..HEAD@{u}
   ga = log --graph --pretty=format:'%C(auto)%h%d %s %C(green)%aN' --all
   logf = log --decorate --name-status
   logme = !sh -c 'git log --decorate --name-status --author=\"`git config user.name`\"'
