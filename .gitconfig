@@ -19,6 +19,7 @@
   s = status -s -uno
   su = status -s
   f = fetch
+  p = push
   ff = merge --ff-only
   ci = commit -uno
   ciu = commit
