@@ -72,6 +72,8 @@
 
 (add-to-list 'auto-mode-alist
              '("\\.ttl" . ttl-mode))
+(add-to-list 'auto-mode-alist
+             '("\\.md" . markdown-mode))
 (setq-default read-file-name-completion-ignore-case t)
 (recentf-mode)
 
