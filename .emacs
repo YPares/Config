@@ -40,8 +40,11 @@
                       omn-mode ;; A mode for OWL Manchester Notation
                       yaml-mode
                       markdown-mode
+                      pandoc-mode
+
+                      swiper
                       
-                      ;zenburn-theme
+                                        ;zenburn-theme
 
                       ;rcirc-alertify
                       ))
@@ -70,10 +73,9 @@
 
 ;;; Opening files ;;;
 
-(add-to-list 'auto-mode-alist
-             '("\\.ttl" . ttl-mode))
-(add-to-list 'auto-mode-alist
-             '("\\.md" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.ttl" . ttl-mode))
+(add-to-list 'auto-mode-alist '("\\.md" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.mkd" . markdown-mode))
 (setq-default read-file-name-completion-ignore-case t)
 (recentf-mode)
 
@@ -92,6 +94,10 @@
 
 (setq-default fill-column 80)
 
+;;; MARKDOWN ;;;
+
+(setq markdown-enable-math t)
+
 ;;; GIT ;;;
 
 (global-set-key (kbd "C-c g") 'magit-status)
@@ -101,6 +107,14 @@
 ;; (add-hook 'paredit-mode-hook 'evil-paredit-mode)
 (global-set-key (kbd "C-*") 'evil-search-symbol-forward)
 
+;;; SEARCH ;;;
+
+(global-unset-key (kbd "C-s"))
+
+(global-set-key (kbd "C-s C-s") 'isearch-forward-regexp)
+(global-set-key (kbd "C-s s") 'swiper)
+(global-set-key (kbd "C-s a") 'swiper-all)
+(global-set-key (kbd "C-s b") 'swiper-multi)
 
 ;;; GENERAL LISP ;;;
 
