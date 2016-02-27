@@ -116,6 +116,8 @@
 (global-set-key (kbd "C-s a") 'swiper-all)
 (global-set-key (kbd "C-s b") 'swiper-multi)
 
+(global-set-key (kbd "C-s r") 'recentf-open-files)
+
 ;;; GENERAL LISP ;;;
 
 ;(global-rainbow-delimiters-mode)
