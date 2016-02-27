@@ -18,6 +18,7 @@
   ls = ls-tree --name-only HEAD
   s = status -s -uno
   su = status -s
+  cp = cherry-pick
   f = fetch
   p = push
   ff = merge --ff-only
