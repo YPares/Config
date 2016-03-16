@@ -63,3 +63,7 @@ if [ -n "`which clojure`" ]; then
 else alias clj="lein repl"
 fi
 
+if [ -n "`which nix`"]; then
+    alias nixsr="nix-shell --indirect --add-root _nix-gc-roots/root"
+fi
+
