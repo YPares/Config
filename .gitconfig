@@ -21,12 +21,15 @@
   cp = cherry-pick
   f = fetch
   p = push
-  ff = merge --ff-only
+  ff = pull --ff-only
+  mf = merge --ff-only
   ci = commit -uno
   ciu = commit
   b = branch
   co = checkout
   st = subtree
+  sm = submodule
+  smu = submodule update --init --recursive
   l = log --graph --decorate
   lf = log --graph --decorate --name-status
   g = log --graph --pretty=format:'%C(auto)%h%d %s %C(green)%aN'
