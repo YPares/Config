@@ -30,6 +30,7 @@
   st = subtree
   sm = submodule
   smu = submodule update --init --recursive
+  r = rebase
   l = log --graph --decorate
   lf = log --graph --decorate --name-status
   g = log --graph --pretty=format:'%C(auto)%h%d %s %C(green)%aN'
