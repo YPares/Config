@@ -24,7 +24,10 @@ for f in ~/.bash/*.sh; do
   . "$f"
 done
 
-PS1='${debian_chroot:+($debian_chroot)}\[\033[01;35m\]@\h\[\033[00m\] \[\033[01;34m\]\W\[\033[00m\]\$ '
+last_dirs_in_path() {
+    pwd | awk -F\/ '{sub("'$HOME'","~",$0); out = ""; if(NF-2 > 0){ out = $(NF-2) "/"; } ; if (NF-1 > 0) { out = out $(NF-1) "/" } ; print out $(NF)}'
+}
+PS1='${debian_chroot:+($debian_chroot)}\[\033[01;35m\]@\h\[\033[00m\] \[\033[01;34m\]$(last_dirs_in_path)\[\033[00m\]\$ '
 
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
