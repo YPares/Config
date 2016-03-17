@@ -19,7 +19,7 @@
   s = status -s -uno
   su = status -s
   cp = cherry-pick
-  f = fetch
+  f = remote update --prune
   p = push
   ff = pull --ff-only
   mf = merge --ff-only
