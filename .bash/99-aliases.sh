@@ -30,7 +30,10 @@ alias d="popd"
 
 alias ff="find . -iname"
 
+alias sag="sudo apt-get"
 alias sagi="sudo apt-get install"
+alias sagu="sudo apt-get update"
+alias saguu="sudo sh -c 'apt-get update && apt-get upgrade -y && apt-get dist-upgrade -y'"
 
 alias ed="ed -p'> '"
 
