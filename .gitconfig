@@ -28,6 +28,7 @@
   b = branch
   co = checkout
   st = subtree
+  wt = worktree
   sm = submodule
   smu = submodule update --init --recursive
   r = rebase
