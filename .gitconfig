@@ -38,6 +38,7 @@
   gb = log --graph --pretty=format:'%C(auto)%h%d %s %C(green)%aN' --branches
   gr = log --graph --pretty=format:\"%C(auto)%h%d %s %C(green)%aN\" HEAD~~~..HEAD@{u}
   ga = log --graph --pretty=format:'%C(auto)%h%d %s %C(green)%aN' --all
+  gu = !sh -c 'git log --graph --pretty=format:\"%C(auto)%h%d %s %C(green)%aN\" HEAD HEAD@{u} --not \"`git merge-base HEAD HEAD@{u}`~\"'
   logme = !sh -c 'git log --decorate --name-status --author=\"`git config user.name`\"'
   showf = show --decorate --name-status
   rl = reflog show --decorate
