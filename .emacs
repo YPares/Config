@@ -148,7 +148,7 @@
 (add-hook 'clojure-mode-hook 'subword-mode)
 (add-hook 'cider-repl-mode-hook 'paredit-mode)
 (add-hook 'cider-repl-mode-hook 'subword-mode)
-(add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
+;(add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
 (setq cider-repl-popup-stacktraces t)
 
 (eval-after-load "cider-mode"

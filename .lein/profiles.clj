@@ -1,7 +1,9 @@
 {:repl {:plugins
-             [[cider/cider-nrepl "0.10.0"]]
+             [;[cider/cider-nrepl "0.10.0"]
+              ]
         :dependencies
-             [[org.clojure/tools.nrepl "0.2.12"]]}
+             [;[org.clojure/tools.nrepl "0.2.12"]
+              ]}
  :user {:plugins
             [;[lein-tarsier "0.9.4"]
              ]
