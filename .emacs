@@ -97,6 +97,11 @@
 
 (setq-default fill-column 80)
 
+(global-unset-key [(control z)])
+(global-unset-key [(control x)(control z)])
+
+(global-set-key [(control z)] 'undo)
+
 ;;; MARKDOWN ;;;
 
 (setq markdown-enable-math t)
