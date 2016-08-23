@@ -10,9 +10,10 @@
                       ;starter-kit-bindings
 		      ;starter-kit-eshell
 		      better-defaults
-		      smex
-		      ido-ubiquitous
+		      ;smex
+		      ;ido-ubiquitous
 		      magit
+                      helm-git-grep
                       anzu ;; anzu-mode shows number of matches when using C-s
 
                       paredit
@@ -86,12 +87,24 @@
 (setq-default read-file-name-completion-ignore-case t)
 (recentf-mode)
 
-;;; IDO/SMEX ;;;
+;;; HELM ;;;
 
-(global-set-key (kbd "M-x") 'smex)
-(global-set-key (kbd "M-X") 'smex-major-mode-commands)
+(global-unset-key (kbd "C-s"))
+
+(helm-mode 1)
+(helm-autoresize-mode 1)
+
+(global-set-key (kbd "M-x") 'helm-M-x)
 ;; This is your old M-x.
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
+
+(global-set-key (kbd "C-x C-f") 'helm-find-files)
+(define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebihnd tab to do persistent action
+(define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB works in terminal
+(define-key helm-map (kbd "C-z")  'helm-select-action) ; list actions using C-z
+
+(global-set-key (kbd "C-s r") 'helm-recentf)
+(global-set-key (kbd "C-s g") 'helm-git-grep)
 
 ;;; ESHELL ;;;
 
@@ -110,10 +123,6 @@
 
 (setq markdown-enable-math t)
 
-;;; GIT ;;;
-
-(global-set-key (kbd "C-c g") 'magit-status)
-
 ;;; EVIL ;;;
 
 ;; (add-hook 'paredit-mode-hook 'evil-paredit-mode)
@@ -121,14 +130,14 @@
 
 ;;; SEARCH ;;;
 
-(global-unset-key (kbd "C-s"))
-
 (global-set-key (kbd "C-s C-s") 'isearch-forward-regexp)
 (global-set-key (kbd "C-s s") 'swiper)
 (global-set-key (kbd "C-s a") 'swiper-all)
 (global-set-key (kbd "C-s b") 'swiper-multi)
 
-(global-set-key (kbd "C-s r") 'recentf-open-files)
+;;; GIT ;;;
+
+(global-set-key (kbd "C-c g") 'magit-status)
 
 ;;; GENERAL LISP ;;;
 
