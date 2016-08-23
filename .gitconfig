@@ -50,3 +50,5 @@
 [user]
   name = YPares
   email = yves.pares@gmail.com
+[grep]
+	lineNumber = true

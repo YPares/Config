@@ -1,6 +1,6 @@
 (require 'package)
 (add-to-list 'package-archives
-             '("melpa-stable" . "http://melpa-stable.milkbox.net/packages/") t)
+             '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 (add-to-list 'package-archives
 	     '("marmalade" . "http://marmalade-repo.org/packages/") t)
 (package-initialize)
@@ -28,13 +28,17 @@
                       ;clojure-test-mode
                       cider
 
+                      company
+                      intero
                       haskell-mode
                       ghc
-                      shm
+                      ;shm
 
                       nix-mode
                       
                       inf-ruby
+
+                      ess  ;; R and other statistics tools.
 
                       ttl-mode
                       omn-mode ;; A mode for OWL Manchester Notation
@@ -163,6 +167,10 @@
      (define-key cider-mode-map (kbd "C-c C-n") 'cider-repl-set-ns)
      (define-key cider-mode-map (kbd "C-c M-n") 'cider-eval-ns-form)))
 
+;; (eval-after-load "cider-repl-mode"
+;;   '(progn
+;;      (define-key cider-mode-map (kbd "C-c M-c") 'cider-repl-clear-buffer)))
+
 ;;; HASKELL ;;;
 
 (let ((my-cabal-path (expand-file-name "~/.cabal/bin"))
@@ -185,7 +193,7 @@
 (eval-after-load "haskell-mode"
   '(progn
 ;    (define-key haskell-mode-map (kbd "C-x C-d") nil)
-    (define-key haskell-mode-map (kbd "C-c C-z") 'haskell-interactive-switch)
+;    (define-key haskell-mode-map (kbd "C-c C-z") 'haskell-interactive-switch)
 ;    (define-key haskell-mode-map (kbd "C-c C-l") 'haskell-process-load-or-reload)
 ;    (define-key haskell-mode-map (kbd "C-c C-b") 'haskell-interactive-switch)
 ;    (define-key haskell-mode-map (kbd "C-c C-t") 'haskell-process-do-type)
@@ -206,7 +214,16 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ansi-color-faces-vector
+   [default default default italic underline success warning error])
+ '(ansi-color-names-vector
+   ["#2e3436" "#a40000" "#4e9a06" "#c4a000" "#204a87" "#5c3566" "#729fcf" "#eeeeec"])
+ '(cider-repl-history-file "_cider_repl.hist")
+ '(cider-repl-use-pretty-printing t)
+ '(custom-enabled-themes (quote (adwaita)))
+ '(ess-tab-complete-in-script 1)
  '(haskell-process-type (quote stack-ghci))
+ '(nxml-sexp-element-flag t)
  '(safe-local-variable-values (quote ((scroll-step . 1) (c-indentation-style . "K&R"))))
  '(tags-case-fold-search nil))
 
