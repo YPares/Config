@@ -174,11 +174,8 @@
 (eval-after-load "cider-mode"
   '(progn
      (define-key cider-mode-map (kbd "C-c C-n") 'cider-repl-set-ns)
-     (define-key cider-mode-map (kbd "C-c M-n") 'cider-eval-ns-form)))
-
-;; (eval-after-load "cider-repl-mode"
-;;   '(progn
-;;      (define-key cider-mode-map (kbd "C-c M-c") 'cider-repl-clear-buffer)))
+     (define-key cider-mode-map (kbd "C-c M-n") 'cider-eval-ns-form)
+     (define-key cider-repl-mode-map (kbd "M-c") 'cider-repl-clear-buffer)))
 
 ;;; HASKELL ;;;
 
