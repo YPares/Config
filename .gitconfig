@@ -15,6 +15,7 @@
 [push]
   default = upstream
 [alias]
+  m = merge
   ls = ls-tree --name-only HEAD
   s = status -s -uno
   su = status -s
@@ -48,7 +49,7 @@
   dt = difftool
   mt = mergetool
 [user]
-  name = YPares
-  email = yves.pares@gmail.com
+  name = Yves Pares
+  email = yves.pares@tweag.io
 [grep]
-	lineNumber = true
+  lineNumber = true

@@ -5,6 +5,9 @@ alias sshnet="ssh -fND 1024 ypares@ssh.insa-rouen.fr"
 
 alias grep="grep -i"
 
+alias g="git"
+alias gg="git g -n13"
+
 alias m="mplayer"
 
 alias syncaudio="rsync -rtuv --size-only /Data/Audio/Sorted/ /run/media/ywen/scorpio/Audio/Sorted/"
@@ -69,4 +72,7 @@ fi
 if [ -n "`which nix`"]; then
     alias nixsr="nix-shell --indirect --add-root _nix-gc-roots/root"
 fi
+
+alias docker_clean_images='docker rmi $(docker images -a --filter=dangling=true -q)'
+alias docker_clean_ps='docker rm $(docker ps --filter=status=exited --filter=status=created -q)'
 

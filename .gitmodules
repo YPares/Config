@@ -1,0 +1,3 @@
+[submodule "tweag/deslog/factplusplus"]
+	path = tweag/deslog/factplusplus
+	url = git://github.com/tweag/factplusplus.git
