@@ -36,11 +36,12 @@
   l = log --graph --decorate
   l1 = log --decorate --name-status -n1
   lf = log --graph --decorate --name-status
-  g = log --graph --pretty=format:'%C(auto)%h%d %s %C(green)%aN'
-  gb = log --graph --pretty=format:'%C(auto)%h%d %s %C(green)%aN' --branches
-  gr = log --graph --pretty=format:\"%C(auto)%h%d %s %C(green)%aN\" HEAD~~~..HEAD@{u}
-  ga = log --graph --pretty=format:'%C(auto)%h%d %s %C(green)%aN' --all
-  gu = !sh -c 'git log --graph --pretty=format:\"%C(auto)%h%d %s %C(green)%aN\" HEAD HEAD@{u} --not \"`git merge-base HEAD HEAD@{u}`~\"'
+  g = log --graph --pretty=format:'%C(auto)%h%<(20,trunc)%d %<(50,trunc)%s %C(green)(%cr) %C(bold blue)%aN'
+  gb = log --graph --pretty=format:'%C(auto)%h%<(20,trunc)%d %<(50,trunc)%s %C(green)(%cr) %C(bold blue)%aN' --branches
+  gr = log --graph --pretty=format:'%C(auto)%h%<(20,trunc)%d %<(50,trunc)%s %C(green)(%cr) %C(bold blue)%aN' HEAD~~~..HEAD@{u}
+  ga = log --graph --pretty=format:'%C(auto)%h%<(20,trunc)%d %<(50,trunc)%s %C(green)(%cr) %C(bold blue)%aN' --all
+  gu = !sh -c 'git log --graph --pretty=format:\"%C(auto)%h%<(20,trunc)%d %<(50,trunc)%s %C(green)(%cr) %C(bold blue)%aN\" HEAD HEAD@{u} --not \"`git merge-base HEAD HEAD@{u}`~\"'
+  stal = stash list --pretty=format:'%C(red)%h%C(reset) - %C(dim yellow)(%C(bold magenta)%gd%C(dim yellow))%C(reset) %<(60,trunc)%s %C(green)(%cr) %C(bold blue)%an'
   logme = !sh -c 'git log --decorate --name-status --author=\"`git config user.name`\"'
   rl = reflog show --decorate
   sb = show-branch
