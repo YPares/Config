@@ -54,3 +54,5 @@
   email = yves.pares@tweag.io
 [grep]
   lineNumber = true
+[credential]
+	helper = store

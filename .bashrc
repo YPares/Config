@@ -30,6 +30,7 @@ last_dirs_in_path() {
 PS1='${debian_chroot:+($debian_chroot)}\[\033[01;35m\]@\h\[\033[00m\] \[\033[01;34m\]$(last_dirs_in_path)\[\033[00m\]\$ '
 
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+PATH=$PATH:$HOME/.rvm/bin:$HOME/.gem/ruby/2.1.0/bin # Add RVM to PATH for scripting
 
 function __vte_prompt_command() { echo -n ""; }
+
