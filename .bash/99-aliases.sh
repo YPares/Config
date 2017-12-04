@@ -55,6 +55,7 @@ alias mkpyexe="echo '#!/usr/bin/env python
 ' >"
 
 
+alias shi="stack ghci --no-load --no-build"
 alias hc="ghc -outputdir _build.d/default -fwarn-incomplete-patterns"
 alias hi="ghci -outputdir _build.d/default -fwarn-incomplete-patterns"
 alias hcp="ghc -outputdir _build.d/prof -prof -fprof-auto-top -fprof-cafs -O2"
