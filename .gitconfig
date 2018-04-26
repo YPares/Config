@@ -45,10 +45,12 @@
   logme = !sh -c 'git log --decorate --name-status --author=\"`git config user.name`\"'
   rl = reflog show --decorate
   sb = show-branch
-  d = diff --word-diff
-  sh = show --word-diff --decorate
+  d = diff --word-diff=color
+  sh = show --word-diff=color --decorate
   dt = difftool
   mt = mergetool
+  ignore = update-index --assume-unchanged
+  unignore = update-index --no-assume-unchanged
 [user]
   name = Yves Pares
   email = yves.pares@tweag.io
