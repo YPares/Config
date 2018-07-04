@@ -5,7 +5,6 @@ alias sshnet="ssh -fND 1024 ypares@ssh.insa-rouen.fr"
 
 alias grep="grep -i"
 
-alias g="git"
 alias gg="git g -n13"
 
 alias m="mplayer"
