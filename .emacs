@@ -226,7 +226,7 @@
  '(nxml-sexp-element-flag t)
  '(package-selected-packages
    (quote
-    (dockerfile-mode docker elpy bazel-mode smart-shift highlight-indent-guides frame-cmds swiper pandoc-mode markdown-mode yaml-mode omn-mode ttl-mode ess inf-ruby nix-mode ghc intero company cider clojure-mode rainbow-delimiters nlinum evil-paredit evil flycheck paredit anzu magit ido-ubiquitous smex better-defaults)))
+    (elm-mode dockerfile-mode docker elpy bazel-mode smart-shift highlight-indent-guides frame-cmds swiper pandoc-mode markdown-mode yaml-mode omn-mode ttl-mode ess inf-ruby nix-mode ghc intero company cider clojure-mode rainbow-delimiters nlinum evil-paredit evil flycheck paredit anzu magit ido-ubiquitous smex better-defaults)))
  '(safe-local-variable-values (quote ((scroll-step . 1) (c-indentation-style . "K&R"))))
  '(tags-case-fold-search nil)
  '(tool-bar-mode nil))

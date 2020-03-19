@@ -34,3 +34,5 @@ PATH=$PATH:$HOME/.rvm/bin:$HOME/.gem/ruby/2.1.0/bin # Add RVM to PATH for script
 
 function __vte_prompt_command() { echo -n ""; }
 
+
+export PATH=/home/yves/.local/bin:$PATH

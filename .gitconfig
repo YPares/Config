@@ -22,6 +22,7 @@
   cp = cherry-pick
   f = remote update --prune
   p = push
+  cpf = !sh -c 'git ci -a --amend && git push --force-with-lease' 
   ff = pull --ff-only
   mf = merge --ff-only
   ci = commit -uno
