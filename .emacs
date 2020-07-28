@@ -52,7 +52,12 @@
                       
                                         ;zenburn-theme
 
-                      ;rcirc-alertify
+					;rcirc-alertify
+		      rust-mode
+		      company
+		      racer
+		      flycheck
+		      flycheck-rust
                       ))
 
 (dolist (p my-packages)
@@ -226,7 +231,7 @@
  '(nxml-sexp-element-flag t)
  '(package-selected-packages
    (quote
-    (elm-mode dockerfile-mode docker elpy bazel-mode smart-shift highlight-indent-guides frame-cmds swiper pandoc-mode markdown-mode yaml-mode omn-mode ttl-mode ess inf-ruby nix-mode ghc intero company cider clojure-mode rainbow-delimiters nlinum evil-paredit evil flycheck paredit anzu magit ido-ubiquitous smex better-defaults)))
+    (racer flycheck-rust rust-mode elm-mode dockerfile-mode docker elpy bazel-mode smart-shift highlight-indent-guides frame-cmds swiper pandoc-mode markdown-mode yaml-mode omn-mode ttl-mode ess inf-ruby nix-mode ghc intero company cider clojure-mode rainbow-delimiters nlinum evil-paredit evil flycheck paredit anzu magit ido-ubiquitous smex better-defaults)))
  '(safe-local-variable-values (quote ((scroll-step . 1) (c-indentation-style . "K&R"))))
  '(tags-case-fold-search nil)
  '(tool-bar-mode nil))
@@ -254,6 +259,20 @@
 (add-to-list 'auto-mode-alist '("\\.flr$" . flora-mode))
 (autoload 'flora-mode "flora" "Major mode for editing Flora programs." t)
 
+
+;;; RUST ;;;
+
+(add-hook 'flycheck-mode-hook #'flycheck-rust-setup)
+(add-hook 'rust-mode-hook  #'company-mode)
+(add-hook 'rust-mode-hook  #'racer-mode)
+(add-hook 'racer-mode-hook #'eldoc-mode)
+(add-hook 'rust-mode-hook  #'flycheck-mode)
+(add-hook 'rust-mode-hook
+          '(lambda ()
+	     ;(setq racer-cmd (concat (getenv "HOME") "/.rust-dev/racer/target/release/racer"))
+	     (setq racer-rust-src-path (concat (getenv "HOME") "/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src"))
+             (local-set-key (kbd "TAB") #'company-indent-or-complete-common)
+	     (electric-pair-mode 1)))
 
 ;;; IRC ;;;
 
